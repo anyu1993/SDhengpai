@@ -277,6 +277,19 @@
     .footer-links h4 { font-size: 16px; font-weight: 600; margin-bottom: 18px; color: white; }
     .footer-links a { display: block; color: #94a3b8; text-decoration: none; margin-bottom: 10px; font-size: 14px; transition: color 0.2s; }
     .footer-links a:hover { color: white; }
+    
+    .quick-nav { background: #f8fafc; }
+    .quick-nav-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .quick-nav-card { background: white; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px; text-align: center; text-decoration: none; transition: all 0.3s; }
+    .quick-nav-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,102,238,0.1); border-color: #c7d2fe; }
+    .quick-nav-icon { font-size: 36px; margin-bottom: 12px; }
+    .quick-nav-card h3 { font-size: 18px; color: #1e293b; margin-bottom: 8px; }
+    .quick-nav-card p { color: #0066ee; font-size: 14px; }
+    
+    @media (max-width: 768px) {
+      .quick-nav-grid { grid-template-columns: 1fr; }
+    }
+
     .footer-bottom { border-top: 1px solid #1e293b; padding-top: 28px; text-align: center; color: #64748b; font-size: 14px; }
     
     @media (max-width: 768px) {
@@ -288,12 +301,29 @@
       .contact-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; }
     }
+
+    .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+    .mobile-menu-btn span { display: block; width: 24px; height: 2px; background: white; margin: 5px 0; transition: all 0.3s; }
+    .mobile-nav { display: none; position: fixed; top: 72px; left: 0; right: 0; background: linear-gradient(135deg, #0055dd 0%, #0077ff 100%); padding: 20px; flex-direction: column; gap: 12px; z-index: 99; }
+    .mobile-nav.active { display: flex; }
+    .mobile-nav a { color: white; text-decoration: none; padding: 12px 16px; background: rgba(255,255,255,0.1); border-radius: 8px; font-size: 16px; }
+    
+    @media (max-width: 768px) {
+      nav { display: none; }
+      .mobile-menu-btn { display: block; }
+      .mobile-nav { display: none; }
+      .mobile-nav.active { display: flex; }
+    }
+
   </style>
 </head>
 <body>
   <header>
     <div class="container">
-      <a href="#" class="logo">
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="index.html" class="logo">
         <div class="logo-icon">
           <span>SDHP</span>
         </div>
@@ -308,6 +338,12 @@
       </nav>
     </div>
   </header>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="index.html">🏠 首页</a>
+    <a href="products.html">📦 产品中心</a>
+    <a href="about.html">👨‍💻 关于我们</a>
+    <a href="contact.html">📞 联系我们</a>
+  </nav>
   
   <section class="hero">
     <div class="container">
@@ -455,6 +491,29 @@
     </div>
   </section>
   
+
+  <section class="quick-nav section">
+    <div class="container">
+      <div class="quick-nav-grid">
+        <a href="products.html" class="quick-nav-card">
+          <div class="quick-nav-icon">📦</div>
+          <h3>产品中心</h3>
+          <p>查看全部产品 →</p>
+        </a>
+        <a href="about.html" class="quick-nav-card">
+          <div class="quick-nav-icon">👨‍💻</div>
+          <h3>关于我们</h3>
+          <p>了解更多 →</p>
+        </a>
+        <a href="contact.html" class="quick-nav-card">
+          <div class="quick-nav-icon">📞</div>
+          <h3>联系我们</h3>
+          <p>立即咨询 →</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <footer>
     <div class="container">
       <div class="footer-grid">
@@ -565,5 +624,12 @@
     });
     window.addEventListener('scroll', handleScroll);
   </script>
+
+  <script>
+    function toggleMobileMenu() {
+      document.getElementById('mobileNav').classList.toggle('active');
+    }
+  </script>
+
 </body>
 </html>
