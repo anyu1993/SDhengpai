@@ -306,20 +306,12 @@
     .mobile-nav.active { display: flex; }
     .mobile-nav a { color: white; text-decoration: none; padding: 12px 16px; background: rgba(255,255,255,0.1); border-radius: 8px; font-size: 16px; }
     
-    .quick-nav { background: #f8fafc; }
-    .quick-nav-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .quick-nav-card { background: white; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px; text-align: center; text-decoration: none; transition: all 0.3s; }
-    .quick-nav-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,102,238,0.1); border-color: #c7d2fe; }
-    .quick-nav-icon { font-size: 36px; margin-bottom: 12px; }
-    .quick-nav-card h3 { font-size: 18px; color: #1e293b; margin-bottom: 8px; }
-    .quick-nav-card p { color: #0066ee; font-size: 14px; }
-    
     @media (max-width: 768px) {
       nav { display: none; }
       .mobile-menu-btn { display: block; }
       .mobile-nav { display: none; }
       .mobile-nav.active { display: flex; }
-      .quick-nav-grid { grid-template-columns: 1fr; }
+      
     }
 
   </style>
@@ -336,11 +328,11 @@
         恒派智能科技
       </a>
       <nav>
-        <a href="#">首页</a>
-        <a href="#products">产品中心</a>
-        <a href="#about">关于我们</a>
-        <a href="#contact">联系我们</a>
-        <a href="#contact" class="nav-cta">在线咨询</a>
+        <a href="index.html">首页</a>
+        <a href="products.html">产品中心</a>
+        <a href="about.html">关于我们</a>
+        <a href="contact.html">联系我们</a>
+        <a href="contact.html" class="nav-cta">在线咨询</a>
       </nav>
     </div>
   </header>
@@ -393,28 +385,6 @@
   </section>
   
 
-  <section class="quick-nav section">
-    <div class="container">
-      <div class="quick-nav-grid">
-        <a href="index.html" class="quick-nav-card">
-          <div class="quick-nav-icon">🏠</div>
-          <h3>返回首页</h3>
-          <p>首页 →</p>
-        </a>
-        <a href="products.html" class="quick-nav-card">
-          <div class="quick-nav-icon">📦</div>
-          <h3>产品中心</h3>
-          <p>查看产品 →</p>
-        </a>
-        <a href="about.html" class="quick-nav-card">
-          <div class="quick-nav-icon">👨‍💻</div>
-          <h3>关于我们</h3>
-          <p>了解更多 →</p>
-        </a>
-      </div>
-    </div>
-  </section>
-
   <footer>
     <div class="container">
       <div class="footer-grid">
@@ -424,16 +394,16 @@
         </div>
         <div class="footer-links">
           <h4>快速链接</h4>
-          <a href="#">首页</a>
-          <a href="#products">产品中心</a>
-          <a href="#about">关于我们</a>
-          <a href="#contact">联系我们</a>
+          <a href="index.html">首页</a>
+          <a href="products.html">产品中心</a>
+          <a href="about.html">关于我们</a>
+          <a href="contact.html">联系我们</a>
         </div>
         <div class="footer-links">
           <h4>产品中心</h4>
-          <a href="#">磁分离机</a>
-          <a href="#">转鼓式精密过滤器</a>
-          <a href="#">明渠式紫外线消毒器</a>
+          <a href="index.html">磁分离机</a>
+          <a href="index.html">转鼓式精密过滤器</a>
+          <a href="index.html">明渠式紫外线消毒器</a>
         </div>
       </div>
       <div class="footer-bottom">
