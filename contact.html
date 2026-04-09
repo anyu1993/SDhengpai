@@ -16,7 +16,7 @@
             primary: '#0066ee',
             secondary: '#00C7BE',
             accent: '#5856D6',
-            dark: { bg: '#f8fafc', card: '#1e293b', border: 'rgba(0,102,238,0.15)' },
+            dark: { bg: '#eff6ff', card: '#1e293b', border: 'rgba(0,102,238,0.15)' },
             text: { primary: '#1e293b', secondary: '#475569' }
           },
           fontFamily: { sans: ['Noto Sans SC', 'Inter', 'sans-serif'], inter: ['Inter', 'sans-serif'] }
@@ -26,8 +26,8 @@
   </script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: #f8fafc; color: #1e293b; font-family: 'Noto Sans SC', sans-serif; }
-    .shadow-md { background: linear-gradient(135deg, #1e293b 0%, #f8fafc 100%); }
+    body { background: #eff6ff; color: #1e293b; font-family: 'Noto Sans SC', sans-serif; }
+    .shadow-md { background: linear-gradient(135deg, #1e293b 0%, #eff6ff 100%); }
     .nav-blur { background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); }
     .text-gradient { background: linear-gradient(135deg, #0066ee 0%, #00C7BE 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .grid-bg { background-image: linear-gradient(rgba(0,102,238,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,102,238,0.05) 1px, transparent 1px); background-size: 50px 50px; }
@@ -38,12 +38,12 @@
     .form-input { background: #1e293b; border: 1px solid rgba(0,102,238,0.15); transition: all 0.2s ease; }
     .form-input:focus { border-color: #0066ee; box-shadow: 0 0 0 3px rgba(0,119,255,0.1); outline: none; }
   
-    .light-bg { background-color: #f8fafc; }
+    .light-bg { background-color: #eff6ff; }
     .light-card { background-color: #ffffff; }
     .light-border { border-color: rgba(0,102,238,0.15); }
     .text-gray-900 { color: #1e293b; }
     .text-gray-700 { color: #475569; }
-    .bg-white { background-color: #f8fafc; }
+    .bg-white { background-color: #eff6ff; }
     .bg-light-card { background-color: #ffffff; }
     
   </style>
@@ -74,7 +74,7 @@
         <button id="menu-btn" class="md:hidden text-gray-900 p-2"><i data-lucide="menu" class="w-6 h-6"></i></button>
       </div>
     </div>
-    <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-72 bg-white border-l border-light-border md:hidden">
+    <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-72 bg-white border-l border-blue-200 md:hidden">
       <div class="p-4">
         <button id="close-menu" class="absolute top-4 right-6 text-gray-900"><i data-lucide="x" class="w-6 h-6"></i></button>
         <div class="mt-12 space-y-6">
@@ -100,7 +100,7 @@
   <section class="py-10 lg:py-16 grid-bg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-16">
-        <div class="p-4 rounded-2xl bg-light-card border border-gray-200 shadow-sm text-center hover:border-primary/50 transition-colors">
+        <div class="p-4 rounded-2xl bg-light-card border border-blue-200 shadow-sm text-center hover:border-primary/50 transition-colors">
           <div class="w-16 h-16 mx-auto rounded-xl bg-primary/10 flex items-center justify-center mb-5">
             <i data-lucide="user" class="w-8 h-8 text-gray-900"></i>
           </div>
@@ -108,7 +108,7 @@
           <p class="text-gray-100">王经理</p>
         </div>
         
-        <div class="p-4 rounded-2xl bg-light-card border border-gray-200 shadow-sm text-center hover:border-secondary/50 transition-colors">
+        <div class="p-4 rounded-2xl bg-light-card border border-blue-200 shadow-sm text-center hover:border-secondary/50 transition-colors">
           <div class="w-16 h-16 mx-auto rounded-xl bg-secondary/10 flex items-center justify-center mb-5">
             <i data-lucide="message-circle" class="w-8 h-8 text-gray-700"></i>
           </div>
@@ -116,7 +116,7 @@
           <p class="text-gray-100">点击右侧按钮<br>联系客服 王经理</p>
         </div>
         
-        <div class="p-4 rounded-2xl bg-light-card border border-gray-200 shadow-sm text-center hover:border-accent/50 transition-colors">
+        <div class="p-4 rounded-2xl bg-light-card border border-blue-200 shadow-sm text-center hover:border-accent/50 transition-colors">
           <div class="w-16 h-16 mx-auto rounded-xl bg-accent/10 flex items-center justify-center mb-5">
             <i data-lucide="map-pin" class="w-8 h-8 text-accent"></i>
           </div>
@@ -126,7 +126,7 @@
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <div class="p-4 rounded-2xl bg-light-card border border-gray-200 shadow-sm">
+        <div class="p-4 rounded-2xl bg-light-card border border-blue-200 shadow-sm">
           <h2 class="text-2xl font-bold text-gray-900 mb-6">在线留言</h2>
           <p class="text-gray-300 mb-8">请填写以下信息，我们会尽快与您联系</p>
           
@@ -160,7 +160,7 @@
         </div>
         
         <div class="space-y-8">
-          <div class="p-4 rounded-2xl bg-light-card border border-gray-200 shadow-sm">
+          <div class="p-4 rounded-2xl bg-light-card border border-blue-200 shadow-sm">
             <h2 class="text-2xl font-bold text-gray-900 mb-6">联系方式</h2>
             <div class="space-y-6">
               <div class="flex items-start space-x-4">
@@ -206,11 +206,11 @@
             <h3 class="text-xl font-bold text-gray-900 mb-4">快速咨询</h3>
             <p class="text-gray-300 mb-6">您可以通过以下方式快速联系我们</p>
             <div class="space-y-4">
-              <a href="tel:17653901110" class="flex items-center space-x-3 p-4 rounded-xl bg-white border border-gray-200 shadow-sm hover:border-primary/50 transition-colors cursor-pointer">
+              <a href="tel:17653901110" class="flex items-center space-x-3 p-4 rounded-xl bg-white border border-blue-200 shadow-sm hover:border-primary/50 transition-colors cursor-pointer">
                 <i data-lucide="phone-call" class="w-6 h-6 text-gray-900"></i>
                 <span class="text-gray-900">直接拨打电话</span>
               </a>
-              <div class="flex items-center space-x-3 p-4 rounded-xl bg-white border border-gray-200 shadow-sm opacity-60">
+              <div class="flex items-center space-x-3 p-4 rounded-xl bg-white border border-blue-200 shadow-sm opacity-60">
                 <i data-lucide="message-circle" class="w-6 h-6 text-gray-300"></i>
                 <span class="text-gray-100">在线咨询（暂未开通）</span>
               </div>
