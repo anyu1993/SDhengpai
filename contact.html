@@ -286,6 +286,19 @@
       .contact-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; }
     }
+
+    .contact-form { max-width: 600px; margin: 0 auto; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: #1e293b; }
+    .form-group input, .form-group textarea { width: 100%; padding: 14px 18px; border: 1px solid #e2e8f0; border-radius: 12px; font-size: 15px; font-family: inherit; transition: all 0.3s; }
+    .form-group input:focus, .form-group textarea:focus { outline: none; border-color: #0066ee; box-shadow: 0 0 0 3px rgba(0,102,238,0.1); }
+    .form-group textarea { min-height: 120px; resize: vertical; }
+    .submit-btn { width: 100%; padding: 16px; background: linear-gradient(135deg, #0066ee 0%, #0099ff 100%); color: white; border: none; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.3s; }
+    .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,102,238,0.3); }
+    .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+    .form-success { background: #dcfce7; border: 1px solid #86efac; color: #166534; padding: 16px; border-radius: 12px; margin-bottom: 20px; text-align: center; }
+    .form-error { background: #fee2e2; border: 1px solid #fca5a5; color: #991b1b; padding: 16px; border-radius: 12px; margin-bottom: 20px; text-align: center; }
+
   </style>
 </head>
 <body>
@@ -317,6 +330,24 @@
   
   <section class="section">
     <div class="container">
+
+      <div class="contact-form">
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">您的姓名</label>
+            <input type="text" id="name" name="name" required placeholder="请输入您的姓名">
+          </div>
+          <div class="form-group">
+            <label for="phone">联系电话</label>
+            <input type="tel" id="phone" name="phone" required placeholder="请输入您的电话">
+          </div>
+          <div class="form-group">
+            <label for="message">留言内容</label>
+            <textarea id="message" name="message" placeholder="请输入您想咨询的内容" rows="4"></textarea>
+          </div>
+          <button type="submit" class="submit-btn">提交询价</button>
+        </form>
+      </div>
       <div class="contact-grid">
         <div class="contact-card">
           <div class="contact-icon">👤</div>
@@ -326,7 +357,7 @@
         <div class="contact-card">
           <div class="contact-icon">💬</div>
           <h3>在线咨询</h3>
-          <p>点击右侧按钮联系客服</p>
+          <p>提交表单，我们尽快联系您</p>
         </div>
         <div class="contact-card">
           <div class="contact-icon">📍</div>
@@ -403,6 +434,39 @@
     function animate() { drawParticles(); requestAnimationFrame(animate); }
     resizeCanvas(); createParticles(); animate();
     window.addEventListener('resize', () => { resizeCanvas(); createParticles(); });
+  </script>
+
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = this.querySelector('.submit-btn');
+      const originalText = btn.textContent;
+      btn.textContent = '提交中...';
+      btn.disabled = true;
+      
+      const formData = new FormData(this);
+      
+      try {
+        const response = await fetch('/contact', {
+          method: 'POST',
+          body: formData
+        });
+        const result = await response.json();
+        
+        if (result.success) {
+          alert('提交成功！我们会尽快联系您。');
+          this.reset();
+        } else {
+          alert(result.message || '提交失败，请稍后重试。');
+        }
+      } catch (error) {
+        alert('提交失败：' + error.message);
+      } finally {
+        btn.textContent = originalText;
+        btn.disabled = false;
+      }
+    });
   </script>
 
 </body>
