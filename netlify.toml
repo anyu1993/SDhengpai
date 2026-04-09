@@ -1,0 +1,17 @@
+[build]
+  publish = "."
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# 表单提交走 Netlify Functions
+[[redirects]]
+  from = "/.netlify/functions/contact"
+  to = "/.netlify/functions/contact"
+  status = 200
+
+# 如果需要，也可以直接用 /api/contact 作为表单提交地址
+[[redirects]]
+  from = "/api/contact"
+  to = "/.netlify/functions/contact"
+  status = 200

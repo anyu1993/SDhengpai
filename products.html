@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>产品中心 - 山东恒派智能科技有限公司</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0066ee',
+            secondary: '#00C7BE',
+            accent: '#5856D6',
+            dark: { bg: '#f8fafc', card: '#1e293b', border: 'rgba(0,102,238,0.15)' },
+            text: { primary: '#1e293b', secondary: '#475569' }
+          },
+          fontFamily: { sans: ['Noto Sans SC', 'Inter', 'sans-serif'], inter: ['Inter', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #f8fafc; color: #1e293b; font-family: 'Noto Sans SC', sans-serif; }
+    .border-border { border: 1px solid rgba(0,102,238,0.15); transition: all 0.3s ease; }
+    .border-border:hover { border-color: rgba(0,119,255,0.6); box-shadow: 0 0 30px rgba(0,102,238,0.15); transform: translateY(-4px); }
+    .shadow-md { background: linear-gradient(135deg, #1e293b 0%, #f8fafc 100%); }
+    .nav-blur { background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); }
+    .text-gradient { background: linear-gradient(135deg, #0066ee 0%, #00C7BE 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .product-icon { background: linear-gradient(135deg, rgba(0,119,255,0.1) 0%, rgba(0,199,190,0.1) 100%); border: 1px solid rgba(0,119,255,0.3); }
+    .grid-bg { background-image: linear-gradient(rgba(0,102,238,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,102,238,0.05) 1px, transparent 1px); background-size: 50px 50px; }
+    .btn-primary { background: linear-gradient(135deg, #0066ee 0%, #0055DD 100%); transition: all 0.2s ease; }
+    .btn-primary:hover { transform: scale(1.02); box-shadow: 0 0 30px rgba(0,119,255,0.4); }
+    .mobile-menu { transform: translateX(100%); transition: transform 0.3s ease; }
+    .mobile-menu.active { transform: translateX(0); }
+  
+    .light-bg { background-color: #f8fafc; }
+    .light-card { background-color: #ffffff; }
+    .light-border { border-color: rgba(0,102,238,0.15); }
+    .text-gray-900 { color: #1e293b; }
+    .text-gray-700 { color: #475569; }
+    .bg-white { background-color: #f8fafc; }
+    .bg-light-card { background-color: #ffffff; }
+    
+  </style>
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="fixed top-0 left-0 right-0 z-50 nav-blur">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+            <i data-lucide="magnet" class="w-6 h-6 text-gray-900"></i>
+          </div>
+          <div>
+            <div class="text-lg font-bold text-gray-900">恒派智能科技</div>
+            <div class="text-xs text-gray-600">HENGPAI INTELLIGENT</div>
+          </div>
+        </a>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-gray-600 hover:text-gray-900 transition-colors">首页</a>
+          <a href="products.html" class="text-gray-900 hover:text-gray-900 transition-colors">产品中心</a>
+          <a href="about.html" class="text-gray-600 hover:text-gray-900 transition-colors">关于我们</a>
+          <a href="contact.html" class="text-gray-600 hover:text-gray-900 transition-colors">联系我们</a>
+          <a href="contact.html" class="flex items-center space-x-2 text-primary">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span class="font-medium">在线咨询</span>
+          </a>
+        </div>
+        <button id="menu-btn" class="md:hidden text-gray-900 p-2"><i data-lucide="menu" class="w-6 h-6"></i></button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-72 bg-white border-l border-light-border md:hidden">
+      <div class="p-6">
+        <button id="close-menu" class="absolute top-6 right-6 text-gray-900"><i data-lucide="x" class="w-6 h-6"></i></button>
+        <div class="mt-12 space-y-6">
+          <a href="index.html" class="block text-gray-900 text-lg">首页</a>
+          <a href="products.html" class="block text-gray-900 text-lg">产品中心</a>
+          <a href="about.html" class="block text-gray-600 text-lg">关于我们</a>
+          <a href="contact.html" class="block text-gray-600 text-lg">联系我们</a>
+          <a href="contact.html" class="flex items-center space-x-2 text-primary text-lg"><i data-lucide="message-circle" class="w-5 h-5"></i><span>在线咨询</span></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Banner -->
+  <section class="pt-32 pb-16 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-blue-100 to-transparent"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <div class="text-sm text-gray-900 font-medium tracking-widest uppercase mb-3">Products</div>
+      <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">产品中心</h1>
+      <p class="text-gray-600 text-lg max-w-2xl mx-auto">四大核心产品，覆盖工业水处理全场景需求</p>
+    </div>
+  </section>
+
+  <!-- Products Grid -->
+  <section class="py-16 lg:py-24 grid-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- 磁分离机 -->
+      <div id="magnetic-separator" class="mb-20 border-border rounded-3xl overflow-hidden shadow-md">
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+          <div class="p-8 lg:p-12 flex flex-col justify-center">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/30 mb-6 w-fit">
+              <i data-lucide="star" class="w-4 h-4 text-gray-900"></i>
+              <span class="text-gray-900 text-sm font-medium">核心产品</span>
+            </div>
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">磁分离机</h2>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              磁分离机是针对工业废水处理的高效固液分离设备。通过外加磁场作用，快速分离水体中的磁性污染物和磁粉，显著提高污水处理效率。设备采用优质不锈钢材质，结构坚固，运行稳定，维护简便。
+            </p>
+            <div class="grid grid-cols-2 gap-4 mb-8">
+              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+                <div class="text-2xl font-bold text-gradient mb-1">1-100</div>
+                <div class="text-gray-600 text-sm">处理量 T/h</div>
+              </div>
+              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+                <div class="text-2xl font-bold text-gradient mb-1">99.9%</div>
+                <div class="text-gray-600 text-sm">分离效率</div>
+              </div>
+              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+                <div class="text-2xl font-bold text-gradient mb-1">304</div>
+                <div class="text-gray-600 text-sm">不锈钢材质</div>
+              </div>
+              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+                <div class="text-2xl font-bold text-gradient mb-1">IP68</div>
+                <div class="text-gray-600 text-sm">防护等级</div>
+              </div>
+            </div>
+            <a href="contact.html" class="btn-primary inline-flex items-center space-x-2 px-6 py-3 rounded-lg text-gray-900 font-medium w-fit">
+              <span>咨询报价</span>
+              <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </a>
+          </div>
+          <div class="bg-gradient-to-br from-blue-50 to-cyan-50 flex items-center justify-center p-8">
+            <div class="relative w-full max-w-md">
+              <div class="overflow-hidden rounded-2xl">
+                <div id="magnetic-carousel" class="flex transition-transform duration-500">
+                  <img src="mag_v1.jpg" alt="磁分离机 v1" class="w-full flex-shrink-0 object-contain">
+                  <img src="mag_v2.jpg" alt="磁分离机 v2" class="w-full flex-shrink-0 object-contain">
+                </div>
+              </div>
+              <div class="flex justify-center mt-4 space-x-2">
+                <button onclick="slideMagnetic(0)" class="magnetic-dot w-3 h-3 rounded-full bg-primary transition-colors" data-index="0"></button>
+                <button onclick="slideMagnetic(1)" class="magnetic-dot w-3 h-3 rounded-full bg-light-border transition-colors" data-index="1"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 高精度过滤器 -->
+      <div id="high-precision-filter" class="mb-20 border-border rounded-3xl overflow-hidden shadow-md">
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+          <div class="bg-gradient-to-br from-cyan-50 to-purple-50 flex items-center justify-center p-8 order-2 lg:order-1">
+            <div class="relative w-full max-w-md">
+              <div class="overflow-hidden rounded-2xl">
+                <div id="filter-carousel" class="flex transition-transform duration-500">
+                  <img src="filter_v1.jpg" alt="转鼓式精密过滤器 v1" class="w-full flex-shrink-0 object-contain">
+                  <img src="filter_v2.jpg" alt="转鼓式精密过滤器 v2" class="w-full flex-shrink-0 object-contain">
+                </div>
+              </div>
+              <div class="flex justify-center mt-4 space-x-2">
+                <button onclick="slideFilter(0)" class="filter-dot w-3 h-3 rounded-full bg-secondary transition-colors" data-index="0"></button>
+                <button onclick="slideFilter(1)" class="filter-dot w-3 h-3 rounded-full bg-light-border transition-colors" data-index="1"></button>
+              </div>
+            </div>
+          </div>
+          <div class="p-8 lg:p-12 flex flex-col justify-center order-1 lg:order-2">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-secondary/10 border border-secondary/30 mb-6 w-fit">
+              <i data-lucide="award" class="w-4 h-4 text-gray-700"></i>
+              <span class="text-gray-700 text-sm font-medium">高精度</span>
+            </div>
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">高精度过滤器</h2>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              高精度过滤器采用多级过滤技术，可根据需求配置微米级滤网，有效去除水体中的悬浮物、细小颗粒、胶体物质等。过滤精度可根据工艺要求灵活调整，产水水质稳定达到后续工艺要求。
+            </p>
+            <div class="grid grid-cols-2 gap-4 mb-8">
+              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+                <div class="text-2xl font-bold text-gradient mb-1">0.1-50</div>
+                <div class="text-gray-600 text-sm">过滤精度 μm</div>
+              </div>
+              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+                <div class="text-2xl font-bold text-gradient mb-1">自动</div>
+                <div class="text-gray-600 text-sm">反冲洗功能</div>
+              </div>
+              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+                <div class="text-2xl font-bold text-gradient mb-1">316L</div>
+                <div class="text-gray-600 text-sm">可选材质</div>
+              </div>
+              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+                <div class="text-2xl font-bold text-gradient mb-1">低阻力</div>
+                <div class="text-gray-600 text-sm">运行能耗小</div>
+              </div>
+            </div>
+            <a href="contact.html" class="btn-primary inline-flex items-center space-x-2 px-6 py-3 rounded-lg text-gray-900 font-medium w-fit">
+              <span>咨询报价</span>
+              <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 紫外消毒模块 -->
+      <div id="uv-disinfection" class="mb-20 border-border rounded-3xl overflow-hidden shadow-md">
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+          <div class="p-8 lg:p-12 flex flex-col justify-center">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/30 mb-6 w-fit">
+              <i data-lucide="shield" class="w-4 h-4 text-accent"></i>
+              <span class="text-accent text-sm font-medium">绿色环保</span>
+            </div>
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">明渠式紫外线消毒器</h2>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              紫外消毒模块采用254nm波长紫外线杀菌技术，能有效破坏微生物DNA/RNA，杀菌率高达99.9%。整个消毒过程无需添加任何化学药剂，不产生二次污染，是绿色环保的消毒解决方案。
+            </p>
+            <div class="grid grid-cols-2 gap-4 mb-8">
+              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+                <div class="text-2xl font-bold text-gradient mb-1">99.9%</div>
+                <div class="text-gray-600 text-sm">杀菌率</div>
+              </div>
+              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+                <div class="text-2xl font-bold text-gradient mb-1">254nm</div>
+                <div class="text-gray-600 text-sm">最佳波长</div>
+              </div>
+              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+                <div class="text-2xl font-bold text-gradient mb-1">0</div>
+                <div class="text-gray-600 text-sm">化学药剂</div>
+              </div>
+              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+                <div class="text-2xl font-bold text-gradient mb-1">实时</div>
+                <div class="text-gray-600 text-sm">在线监测</div>
+              </div>
+            </div>
+            <a href="contact.html" class="btn-primary inline-flex items-center space-x-2 px-6 py-3 rounded-lg text-gray-900 font-medium w-fit">
+              <span>咨询报价</span>
+              <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </a>
+          </div>
+          <div class="bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center p-8">
+            <div class="relative w-full max-w-md">
+              <div class="overflow-hidden rounded-2xl">
+                <div id="uv-carousel" class="flex transition-transform duration-500">
+                  <img src="uv_v1.jpg" alt="明渠式紫外线消毒器 v1" class="w-full flex-shrink-0 object-contain">
+                  <img src="uv_v2.jpg" alt="明渠式紫外线消毒器 v2" class="w-full flex-shrink-0 object-contain">
+                </div>
+              </div>
+              <div class="flex justify-center mt-4 space-x-2">
+                <button onclick="slideUV(0)" class="uv-dot w-3 h-3 rounded-full bg-accent transition-colors" data-index="0"></button>
+                <button onclick="slideUV(1)" class="uv-dot w-3 h-3 rounded-full bg-light-border transition-colors" data-index="1"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 反应池搅拌器 -->
+      <div id="reactor-agitator" class="mb-12 border-border rounded-3xl overflow-hidden shadow-md">
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+          <div class="bg-gradient-to-br from-blue-50 to-cyan-50 flex items-center justify-center p-8 order-2 lg:order-1">
+            <img src="product_reactor_agitator.jpg" alt="反应池搅拌器" class="max-w-full max-h-80 object-contain rounded-2xl shadow-lg shadow-blue-400/20">
+          </div>
+          <div class="p-8 lg:p-12 flex flex-col justify-center order-1 lg:order-2">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-400/10 border border-blue-400/30 mb-6 w-fit">
+              <i data-lucide="cog" class="w-4 h-4 text-blue-400"></i>
+              <span class="text-blue-400 text-sm font-medium">工业级</span>
+            </div>
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">反应池搅拌器</h2>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              反应池搅拌器专为加磁高效沉淀池设计，采用三叶折桨式搅拌桨叶，双层/单层布置可选。设备通过搅拌使池内污水、磁粉、药剂充分混合，形成均匀混合液。变频可调转速，IP68水下防护，运行平稳无死角。
+            </p>
+            <div class="grid grid-cols-2 gap-4 mb-8">
+              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+                <div class="text-2xl font-bold text-gradient mb-1">304</div>
+                <div class="text-gray-600 text-sm">不锈钢材质</div>
+              </div>
+              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+                <div class="text-2xl font-bold text-gradient mb-1">IP68</div>
+                <div class="text-gray-600 text-sm">水下防护</div>
+              </div>
+              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+                <div class="text-2xl font-bold text-gradient mb-1">变频</div>
+                <div class="text-gray-600 text-sm">转速可调</div>
+              </div>
+              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+                <div class="text-2xl font-bold text-gradient mb-1">诺德</div>
+                <div class="text-gray-600 text-sm">品牌电机</div>
+              </div>
+            </div>
+            <a href="contact.html" class="btn-primary inline-flex items-center space-x-2 px-6 py-3 rounded-lg text-gray-900 font-medium w-fit">
+              <span>咨询报价</span>
+              <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 非金属高速剪切机 -->
+      <div id="high-shear-machine" class="mb-20 border-border rounded-3xl overflow-hidden shadow-md">
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+          <div class="p-8 lg:p-12 flex flex-col justify-center">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/30 mb-6 w-fit">
+              <i data-lucide="zap" class="w-4 h-4 text-orange-500"></i>
+              <span class="text-orange-500 text-sm font-medium">高效剪切</span>
+            </div>
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">非金属高速剪切机</h2>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              非金属高速剪切机是磁分离系统中的关键配套设备，通过高速旋转的刀片将絮凝形成的磁粉矾花打散破碎，形成更小的絮体，提高后续沉淀和分离效果。设备采用变频调速，可根据工艺要求灵活调整剪切强度。
+            </p>
+            <div class="grid grid-cols-2 gap-4 mb-8">
+              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+                <div class="text-2xl font-bold text-gradient mb-1">0-3000</div>
+                <div class="text-gray-600 text-sm">转速 rpm</div>
+              </div>
+              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+                <div class="text-2xl font-bold text-gradient mb-1">变频</div>
+                <div class="text-gray-600 text-sm">速度可调</div>
+              </div>
+              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+                <div class="text-2xl font-bold text-gradient mb-1">304</div>
+                <div class="text-gray-600 text-sm">不锈钢材质</div>
+              </div>
+              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+                <div class="text-2xl font-bold text-gradient mb-1">低噪音</div>
+                <div class="text-gray-600 text-sm">运行平稳</div>
+              </div>
+            </div>
+            <a href="contact.html" class="btn-primary inline-flex items-center space-x-2 px-6 py-3 rounded-lg text-gray-900 font-medium w-fit">
+              <span>咨询报价</span>
+              <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </a>
+          </div>
+          <div class="bg-gradient-to-br from-orange-500/5 to-yellow-500/5 flex items-center justify-center p-8">
+            <img src="product_high_shear_machine.jpg" alt="非金属高速剪切机" class="max-w-full max-h-80 object-contain rounded-2xl shadow-lg shadow-orange-500/20">
+          </div>
+        </div>
+      </div>
+
+      <!-- 磁混凝 -->
+      <div id="magnetic-flocculation" class="mb-12 border-border rounded-3xl overflow-hidden shadow-md">
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+          <div class="bg-gradient-to-br from-purple-500/5 to-pink-500/5 flex items-center justify-center p-8 order-2 lg:order-1">
+            <img src="product_magnetic_flocculation.jpg" alt="磁混凝" class="max-w-full max-h-80 object-contain rounded-2xl shadow-lg shadow-purple-500/20">
+          </div>
+          <div class="p-8 lg:p-12 flex flex-col justify-center order-1 lg:order-2">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 mb-6 w-fit">
+              <i data-lucide="layers" class="w-4 h-4 text-purple-500"></i>
+              <span class="text-purple-500 text-sm font-medium">一体化设备</span>
+            </div>
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">磁混凝设备</h2>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              磁混凝一体化设备将磁分离技术与絮凝反应完美结合，集混合、反应、沉淀于一体。设备结构紧凑，处理效率高，适用于市政污水和工业废水处理。能有效去除水中的悬浮物、色度和有机物。
+            </p>
+            <div class="grid grid-cols-2 gap-4 mb-8">
+              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+                <div class="text-2xl font-bold text-gradient mb-1">一体化</div>
+                <div class="text-gray-600 text-sm">集成设计</div>
+              </div>
+              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+                <div class="text-2xl font-bold text-gradient mb-1">10-500</div>
+                <div class="text-gray-600 text-sm">处理量 T/h</div>
+              </div>
+              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+                <div class="text-2xl font-bold text-gradient mb-1">全自动</div>
+                <div class="text-gray-600 text-sm">智能控制</div>
+              </div>
+              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+                <div class="text-2xl font-bold text-gradient mb-1">占地小</div>
+                <div class="text-gray-600 text-sm">节省空间</div>
+              </div>
+            </div>
+            <a href="contact.html" class="btn-primary inline-flex items-center space-x-2 px-6 py-3 rounded-lg text-gray-900 font-medium w-fit">
+              <span>咨询报价</span>
+              <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+            <i data-lucide="magnet" class="w-6 h-6 text-gray-900"></i>
+          </div>
+          <div>
+            <div class="text-lg font-bold text-gray-900">山东恒派智能科技有限公司</div>
+            <div class="text-xs text-gray-600">专注水处理设备 · 磁分离技术专家</div>
+          </div>
+        </div>
+        <div class="flex items-center space-x-6 text-sm text-gray-600">
+          <a href="index.html" class="hover:text-gray-900 transition-colors">首页</a>
+          <a href="products.html" class="hover:text-gray-900 transition-colors">产品中心</a>
+          <a href="about.html" class="hover:text-gray-900 transition-colors">关于我们</a>
+          <a href="contact.html" class="hover:text-gray-900 transition-colors">联系我们</a>
+        </div>
+        <div class="text-sm text-gray-600">© 2024 山东恒派智能科技 版权所有</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    const menuBtn = document.getElementById('menu-btn');
+    const closeMenuBtn = document.getElementById('close-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn?.addEventListener('click', () => mobileMenu.classList.add('active'));
+    closeMenuBtn?.addEventListener('click', () => mobileMenu.classList.remove('active'));
+    mobileMenu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.remove('active')));
+
+    let magneticCurrent = 0;
+    function slideMagnetic(index) {
+      const carousel = document.getElementById('magnetic-carousel');
+      const dots = document.querySelectorAll('.magnetic-dot');
+      if (!carousel) return;
+      magneticCurrent = index;
+      carousel.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('bg-primary', i === index);
+        dot.classList.toggle('bg-light-border', i !== index);
+      });
+    }
+    setInterval(() => slideMagnetic((magneticCurrent + 1) % 2), 4000);
+
+    let filterCurrent = 0;
+    function slideFilter(index) {
+      const carousel = document.getElementById('filter-carousel');
+      const dots = document.querySelectorAll('.filter-dot');
+      if (!carousel) return;
+      filterCurrent = index;
+      carousel.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('bg-secondary', i === index);
+        dot.classList.toggle('bg-light-border', i !== index);
+      });
+    }
+    setInterval(() => slideFilter((filterCurrent + 1) % 2), 4000);
+
+    let uvCurrent = 0;
+    function slideUV(index) {
+      const carousel = document.getElementById('uv-carousel');
+      const dots = document.querySelectorAll('.uv-dot');
+      if (!carousel) return;
+      uvCurrent = index;
+      carousel.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('bg-accent', i === index);
+        dot.classList.toggle('bg-light-border', i !== index);
+      });
+    }
+    setInterval(() => slideUV((uvCurrent + 1) % 2), 4000);
+  </script>
+</body>
+</html>
