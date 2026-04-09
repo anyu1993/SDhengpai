@@ -1,626 +1,493 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta name="msvalidate.01" content="3830F5F426696A59F1CC41D98992631B">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>山东恒派智能科技 - 磁分离机 高精度过滤器 紫外消毒模块 临沂水处理设备厂家</title>
-  <meta name="description" content="山东恒派智能科技专注磁分离机、高精度过滤器、紫外消毒模块等水处理设备研发制造，临沂水处理设备厂家，提供工业废水处理、市政污水处理解决方案">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="description" content="山东恒派智能科技专注磁分离机、高精度过滤器、紫外消毒模块等水处理设备研发制造，临沂水处理设备厂家，提供工业废水处理，市政污水处理解决方案">
+  <meta name="msvalidate.01" content="3830F5F426696A59F1CC41D98992631B">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#0066ee',
-            secondary: '#00C7BE',
-            accent: '#5856D6',
-            dark: {
-              bg: '#eff6ff',
-              card: '#1e293b',
-              border: 'rgba(0,102,238,0.15)',
-            },
-            text: {
-              primary: '#1e293b',
-              secondary: '#475569',
-            }
-          },
-          fontFamily: {
-            sans: ['Noto Sans SC', 'Inter', 'sans-serif'],
-            inter: ['Inter', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: #eff6ff; color: #1e293b; font-family: 'Noto Sans SC', sans-serif; overflow-x: hidden; }
+    body { 
+      font-family: 'Noto Sans SC', 'Inter', sans-serif; 
+      background: #ffffff; 
+      color: #1e293b; 
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
     
-    /* 粒子背景 */
+    /* 粒子/星空动画 */
     #particles-canvas {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       z-index: 0;
       pointer-events: none;
     }
+    .hero, .contact-section { position: relative; }
+    .hero > .container, .contact-section > .container { position: relative; z-index: 1; }
     
-    /* 渐变光效 */
-    .glow-gradient {
-      background: radial-gradient(ellipse at 50% 0%, rgba(0,119,255,0.15) 0%, transparent 60%);
+    /* Header - Premium Gradient */
+    header { 
+      background: linear-gradient(135deg, #0055dd 0%, #0077ff 50%, #0088ff 100%); 
+      color: white; 
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 20px rgba(0, 102, 238, 0.3);
     }
+    header .container { display: flex; justify-content: space-between; align-items: center; height: 72px; }
+    .logo { display: flex; align-items: center; gap: 14px; font-weight: 700; font-size: 22px; color: white; text-decoration: none; }
+    .logo-icon { 
+      width: 44px; height: 44px; 
+      background: rgba(255,255,255,0.15);
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 10px; 
+      display: flex; align-items: center; justify-content: center;
+      backdrop-filter: blur(10px);
+    }
+    .logo-icon span { font-size: 11px; font-weight: 700; letter-spacing: 0.5px; }
+    nav { display: flex; gap: 16px; align-items: center; }
+    nav a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 15px; font-weight: 500; transition: all 0.3s; padding: 8px 0; border-bottom: 2px solid transparent; }
+    nav a:hover { color: white; border-bottom-color: rgba(255,255,255,0.5); }
+    .nav-cta { 
+      background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%); 
+      color: #0066ee; 
+      padding: 10px 24px; 
+      border-radius: 25px; 
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+    }
+    .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
     
-    /* 发光边框 */
-    .border-border {
-      border: 1px solid rgba(0,102,238,0.15);
-      transition: all 0.3s ease;
+    /* Hero - Premium Gradient */
+    .hero { 
+      background: linear-gradient(160deg, #0055dd 0%, #0077ff 40%, #0099ff 70%, #00aaff 100%); 
+      color: white; 
+      padding: 80px 0 100px;
+      position: relative;
+      overflow: hidden;
     }
-    .border-border:hover {
-      border-color: rgba(0,119,255,0.6);
-      box-shadow: 0 0 30px rgba(0,102,238,0.15), inset 0 0 30px rgba(0,119,255,0.05);
-      transform: translateY(-8px);
-    }
-    
-    /* 卡片发光效果 */
-    .shadow-md {
-      background: linear-gradient(135deg, #1e293b 0%, #eff6ff 100%);
-    }
-    
-    /* 导航毛玻璃 */
-    .nav-blur {
-      background: rgba(10,15,26,0.8);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-    }
-    
-    /* 文字渐变 */
-    .text-gradient {
-      background: linear-gradient(135deg, #0066ee 0%, #00C7BE 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    
-    /* 流动光条动画 */
-    @keyframes flowLine {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
-    }
-    .flow-line {
+    .hero::before {
+      content: '';
       position: absolute;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(0,119,255,0.5), transparent);
-      animation: flowLine 3s ease-in-out infinite;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.5;
     }
+    .hero-content { position: relative; z-index: 1; text-align: center; max-width: 800px; margin: 0 auto; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 8px 20px;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 24px;
+      backdrop-filter: blur(10px);
+    }
+    .hero h1 { 
+      font-size: 46px; 
+      font-weight: 700; 
+      margin-bottom: 20px; 
+      line-height: 1.2;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    }
+    .hero p { 
+      font-size: 18px; 
+      opacity: 0.9; 
+      max-width: 600px; 
+      margin: 0 auto 40px; 
+      line-height: 1.8;
+    }
+    .hero-btns { display: flex; gap: 16px; justify-content: center; }
+    .btn { 
+      padding: 16px 36px; 
+      border-radius: 30px; 
+      font-weight: 600; 
+      text-decoration: none; 
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-white { 
+      background: white; 
+      color: #0066ee; 
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    }
+    .btn-white:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.2); }
+    .btn-outline { 
+      border: 2px solid rgba(255,255,255,0.5); 
+      color: white;
+      backdrop-filter: blur(10px);
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: white; transform: translateY(-3px); }
     
-    /* 浮动动画 */
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+    /* Section Styles */
+    .section { padding: 60px 0; }
+    .section-header { text-align: center; margin-bottom: 32px; }
+    .section-header h2 { 
+      font-size: 34px; 
+      font-weight: 700; 
+      color: #1e293b; 
+      margin-bottom: 16px; 
     }
-    .animate-float {
-      animation: float 3s ease-in-out infinite;
-    }
+    .section-header p { color: #64748b; font-size: 17px; }
     
-    /* 脉冲动画 */
-    @keyframes pulse-glow {
-      0%, 100% { opacity: 0.5; }
-      50% { opacity: 1; }
+    /* Products - Card Design */
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+    .product-card { 
+      background: #ffffff; 
+      border: 1px solid #e2e8f0; 
+      border-radius: 20px; 
+      overflow: hidden;
+      transition: all 0.4s;
+      position: relative;
     }
-    .pulse-glow {
-      animation: pulse-glow 2s ease-in-out infinite;
+    .product-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #0066ee, #0099ff);
+      transform: scaleX(0);
+      transition: transform 0.4s;
     }
+    .product-card:hover { 
+      transform: translateY(-8px); 
+      box-shadow: 0 20px 50px rgba(0, 102, 238, 0.12);
+      border-color: #c7d2fe;
+    }
+    .product-card:hover::before { transform: scaleX(1); }
+    .product-img-wrap { 
+      width: 100%; 
+      height: 200px; 
+      background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .product-img { width: 100%; height: 100%; object-fit: cover; }
+    .product-info { padding: 28px; }
+    .product-info h3 { font-size: 20px; font-weight: 700; color: #1e293b; margin-bottom: 10px; }
+    .product-info p { color: #64748b; font-size: 14px; line-height: 1.7; }
     
-    /* 向下滚动箭头 */
-    @keyframes bounce-down {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(8px); }
+    /* Features - Gradient Cards */
+    .features-section { background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%); }
+    .features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .feature { 
+      text-align: center; 
+      padding: 28px 20px;
+      background: white;
+      border-radius: 20px;
+      border: 1px solid #e2e8f0;
+      transition: all 0.3s;
     }
-    .bounce-down {
-      animation: bounce-down 1.5s ease-in-out infinite;
+    .feature:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0, 102, 238, 0.08); }
+    .feature-icon { 
+      width: 72px; height: 72px; 
+      background: linear-gradient(135deg, #0066ee 0%, #0099ff 100%);
+      border-radius: 18px; 
+      margin: 0 auto 20px; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      color: white; 
+      font-size: 32px;
+      box-shadow: 0 8px 24px rgba(0, 102, 238, 0.25);
     }
+    .feature h3 { font-size: 18px; font-weight: 700; color: #1e293b; margin-bottom: 8px; }
+    .feature p { color: #64748b; font-size: 14px; }
     
-    /* 网格背景 */
-    .grid-bg {
-      background-image: 
-        linear-gradient(rgba(0,102,238,0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,102,238,0.05) 1px, transparent 1px);
-      background-size: 50px 50px;
+    /* About - Split Layout */
+    .about-section { background: white; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .about-text h2 { 
+      font-size: 32px; 
+      font-weight: 700; 
+      color: #1e293b; 
+      margin-bottom: 28px;
+      position: relative;
     }
+    .about-text h2::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #0066ee, #0099ff);
+      border-radius: 2px;
+    }
+    .about-text p { color: #475569; margin-bottom: 20px; line-height: 1.9; font-size: 15px; }
+    .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .stat { 
+      background: linear-gradient(135deg, #0066ee 0%, #0099ff 100%);
+      padding: 28px 20px; 
+      border-radius: 16px; 
+      text-align: center;
+      color: white;
+    }
+    .stat-num { font-size: 40px; font-weight: 700; margin-bottom: 4px; }
+    .stat-label { font-size: 14px; opacity: 0.85; }
     
-    /* 移动端菜单 */
-    .mobile-menu {
-      transform: translateX(100%);
-      transition: transform 0.3s ease;
+    /* Contact - Gradient Background */
+    .contact-section { 
+      background: linear-gradient(160deg, #0055dd 0%, #0077ff 50%, #0099ff 100%);
+      color: white;
+      position: relative;
+      overflow: hidden;
     }
-    .mobile-menu.active {
-      transform: translateX(0);
+    .contact-section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/svg%3E");
     }
+    .contact-section .container { position: relative; z-index: 1; }
+    .contact-section .section-header h2 { color: white; }
+    .contact-section .section-header p { color: rgba(255,255,255,0.8); }
+    .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .contact-card { 
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 36px 28px; 
+      border-radius: 20px; 
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .contact-card:hover { background: rgba(255,255,255,0.15); transform: translateY(-4px); }
+    .contact-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; color: white; }
+    .contact-card p { color: rgba(255,255,255,0.85); font-size: 15px; }
     
-    /* 产品图标容器 */
-    .product-icon {
-      background: linear-gradient(135deg, rgba(0,119,255,0.1) 0%, rgba(0,199,190,0.1) 100%);
-      border: 1px solid rgba(0,119,255,0.3);
-    }
+    /* Footer */
+    footer { background: #0f172a; color: white; padding: 48px 0 24px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 32px; }
+    .footer-brand h3 { font-size: 22px; font-weight: 700; margin-bottom: 14px; }
+    .footer-brand p { color: #94a3b8; font-size: 14px; line-height: 1.7; }
+    .footer-links h4 { font-size: 16px; font-weight: 600; margin-bottom: 18px; color: white; }
+    .footer-links a { display: block; color: #94a3b8; text-decoration: none; margin-bottom: 10px; font-size: 14px; transition: color 0.2s; }
+    .footer-links a:hover { color: white; }
+    .footer-bottom { border-top: 1px solid #1e293b; padding-top: 28px; text-align: center; color: #64748b; font-size: 14px; }
     
-    /* CTA按钮 */
-    .btn-primary {
-      background: linear-gradient(135deg, #0066ee 0%, #0055DD 100%);
-      transition: all 0.2s ease;
+    @media (max-width: 768px) {
+      nav { display: none; }
+      .hero h1 { font-size: 32px; }
+      .hero-btns { flex-direction: column; align-items: center; }
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
     }
-    .btn-primary:hover {
-      background: linear-gradient(135deg, #1088FF 0%, #0066EE 100%);
-      transform: scale(1.02);
-      box-shadow: 0 0 30px rgba(0,119,255,0.4);
-    }
-    .btn-primary:active {
-      transform: scale(0.98);
-    }
-    
-    /* 统计数字动画 */
-    @keyframes countUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .count-up {
-      animation: countUp 0.6s ease-out forwards;
-    }
-    
-    /* 装饰圆环 */
-    .ring-decoration {
-      border: 1px solid rgba(0,102,238,0.15);
-      border-radius: 50%;
-    }
-  
-    .light-bg { background-color: #eff6ff; }
-    .light-card { background-color: #ffffff; }
-    .light-border { border-color: rgba(0,102,238,0.15); }
-    .text-gray-900 { color: #1e293b; }
-    .text-gray-700 { color: #475569; }
-    .bg-blue-50 { background-color: #eff6ff; }
-    .bg-white { background-color: #ffffff; }
-    
   </style>
 </head>
-<body class="min-h-screen">
-  <!-- 粒子背景 -->
-  <canvas id="particles-canvas"></canvas>
+<body>
+  <header>
+    <div class="container">
+      <a href="#" class="logo">
+        <div class="logo-icon">
+          <span>SDHP</span>
+        </div>
+        恒派智能科技
+      </a>
+      <nav>
+        <a href="#">首页</a>
+        <a href="#products">产品中心</a>
+        <a href="#about">关于我们</a>
+        <a href="#contact">联系我们</a>
+        <a href="#contact" class="nav-cta">在线咨询</a>
+      </nav>
+    </div>
+  </header>
   
-  <!-- 导航栏 -->
-  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
-        <!-- Logo -->
-        <a href="index.html" class="flex items-center space-x-3">
-          <img src="logo.png" alt="SDHP" class="w-12 h-12 rounded-lg object-contain">
-          <div>
-            <div class="text-lg font-bold text-gray-900">恒派智能科技</div>
-            <div class="text-xs text-gray-300">HENGPAI INTELLIGENT</div>
-          </div>
-        </a>
-        
-        <!-- 桌面导航 -->
-        <div class="hidden md:flex items-center space-x-8">
-          <a href="index.html" class="text-gray-900 hover:text-gray-900 transition-colors">首页</a>
-          <a href="products.html" class="text-gray-300 hover:text-gray-900 transition-colors">产品中心</a>
-          <a href="about.html" class="text-gray-300 hover:text-gray-900 transition-colors">关于我们</a>
-          <a href="contact.html" class="text-gray-300 hover:text-gray-900 transition-colors">联系我们</a>
-          <a href="contact.html" class="flex items-center space-x-2 text-primary">
-            <i data-lucide="message-circle" class="w-4 h-4"></i>
-            <span class="font-medium">在线咨询</span>
-          </a>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">🏭 专注水处理设备研发制造</div>
+        <h1>用磁分离技术<br>让每一滴水都回归纯净</h1>
+        <p>山东恒派智能科技专注高端环保水处理设备研发制造，主要产品包括磁分离机、转鼓式精密过滤器、明渠式紫外线消毒器等，广泛应用于市政污水、工业废水处理领域</p>
+        <div class="hero-btns">
+          <a href="#products" class="btn btn-white">查看产品 →</a>
+          <a href="#contact" class="btn btn-outline">在线咨询</a>
         </div>
-        
-        <!-- 移动端菜单按钮 -->
-        <button id="menu-btn" class="md:hidden text-gray-900 p-2">
-          <i data-lucide="menu" class="w-6 h-6"></i>
-        </button>
-      </div>
-    </div>
-    
-    <!-- 移动端菜单 -->
-    <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-72 bg-white border-l border-blue-200 md:hidden">
-      <div class="p-4">
-        <button id="close-menu" class="absolute top-4 right-6 text-gray-900">
-          <i data-lucide="x" class="w-6 h-6"></i>
-        </button>
-        <div class="mt-12 space-y-6">
-          <a href="index.html" class="block text-gray-900 text-lg">首页</a>
-          <a href="products.html" class="block text-gray-300 text-lg hover:text-gray-900">产品中心</a>
-          <a href="about.html" class="block text-gray-300 text-lg hover:text-gray-900">关于我们</a>
-          <a href="contact.html" class="block text-gray-300 text-lg hover:text-gray-900">联系我们</a>
-          <a href="contact.html" class="flex items-center space-x-2 text-primary text-lg">
-            <i data-lucide="message-circle" class="w-5 h-5"></i>
-            <span>在线咨询</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero Banner -->
-  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-    <!-- 背景光效 -->
-    <div class="absolute inset-0 glow-gradient"></div>
-    <div class="absolute top-1/4 left-1/4 w-96 h-96 ring-decoration opacity-20 pulse-glow"></div>
-    <div class="absolute bottom-1/4 right-1/4 w-64 h-64 ring-decoration opacity-15 pulse-glow" style="animation-delay: 1s;"></div>
-    
-    <!-- 流动光条 -->
-    <div class="flow-line top-1/3 left-0 right-0"></div>
-    <div class="flow-line top-2/3 left-0 right-0" style="animation-delay: 1.5s;"></div>
-    
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <!-- 标签 -->
-      <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 mb-8">
-        <i data-lucide="zap" class="w-4 h-4 text-gray-900"></i>
-        <span class="text-sm text-gray-900 font-medium">环保水处理设备专业制造商</span>
-      </div>
-      
-      <!-- 主标题 -->
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-        <span class="text-gray-900">专注水处理</span><br>
-        <span class="text-gradient">磁分离技术</span>
-      </h1>
-      
-      <!-- 副标题 -->
-      <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
-        研发制造磁分离机、高精度过滤器、紫外消毒模块等高端设备，<br class="hidden sm:block">
-        为工业废水处理提供高效、可靠的解决方案。
-      </p>
-      
-      <!-- CTA按钮 -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="products.html" class="btn-primary px-8 py-4 rounded-lg text-gray-900 font-medium flex items-center space-x-2">
-          <span>查看产品</span>
-          <i data-lucide="arrow-right" class="w-5 h-5"></i>
-        </a>
-        <a href="contact.html" class="px-8 py-4 rounded-lg border border-white/20 text-gray-900 font-medium hover:bg-white/5 transition-colors flex items-center space-x-2">
-          <i data-lucide="message-circle" class="w-5 h-5"></i>
-          <span>联系我们</span>
-        </a>
-      </div>
-      
-      <!-- 产品数量统计 -->
-      <div class="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-4">
-        <div class="text-center">
-          <div class="text-3xl sm:text-4xl font-bold text-gradient">4+</div>
-          <div class="text-gray-300 text-sm mt-1">核心产品</div>
-        </div>
-        <div class="text-center">
-          <div class="text-3xl sm:text-4xl font-bold text-gradient">100+</div>
-          <div class="text-gray-300 text-sm mt-1">处理案例</div>
-        </div>
-        <div class="text-center">
-          <div class="text-3xl sm:text-4xl font-bold text-gradient">24/7</div>
-          <div class="text-gray-300 text-sm mt-1">技术支持</div>
-        </div>
-        <div class="text-center">
-          <div class="text-3xl sm:text-4xl font-bold text-gradient">10+</div>
-          <div class="text-gray-300 text-sm mt-1">年行业经验</div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- 向下滚动箭头 -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 bounce-down">
-      <i data-lucide="chevron-down" class="w-8 h-8 text-gray-900/60"></i>
-    </div>
-  </section>
-
-  <!-- 产品展示 -->
-  <section id="products" class="relative py-20 lg:py-32 grid-bg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- 区块标题 -->
-      <div class="text-center mb-16">
-        <div class="text-sm text-gray-900 font-medium tracking-widest uppercase mb-3">Products</div>
-        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">核心产品</h2>
-        <div class="w-16 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
-      </div>
-      
-      <!-- 产品网格 -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <!-- 磁分离机 -->
-        <a href="products.html#magnetic-separator" class="border-border rounded-2xl p-4 shadow-md group cursor-pointer">
-          <div class="product-icon w-16 h-16 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-            <svg class="w-8 h-8 text-gray-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M6 15V9a6 6 0 0 1 12 0v6"/>
-              <path d="M6 15a2 2 0 0 0 2 2h2V9a2 2 0 0 0-4 0v6"/>
-              <path d="M18 15a2 2 0 0 1-2 2h-2V9a2 2 0 0 1 4 0v6"/>
-              <path d="M12 15v4"/>
-              <circle cx="12" cy="19" r="2"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">磁分离机</h3>
-          <p class="text-gray-300 text-sm leading-relaxed mb-4">
-            高效分离水体中的磁性污染物，处理能力1-100T/h，适用于多种工业废水场景。
-          </p>
-          <div class="flex items-center text-gray-900 text-sm font-medium">
-            <span>了解更多</span>
-            <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
-          </div>
-        </a>
-        
-        <!-- 高精度过滤器 -->
-        <a href="products.html#high-precision-filter" class="border-border rounded-2xl p-4 shadow-md group cursor-pointer">
-          <div class="product-icon w-16 h-16 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-            <svg class="w-8 h-8 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">高精度过滤器</h3>
-          <p class="text-gray-300 text-sm leading-relaxed mb-4">
-            过滤精度达微米级，有效去除悬浮物和细小颗粒，产水水质稳定达标。
-          </p>
-          <div class="flex items-center text-gray-700 text-sm font-medium">
-            <span>了解更多</span>
-            <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
-          </div>
-        </a>
-        
-        <!-- 紫外消毒模块 -->
-        <a href="products.html#uv-disinfection" class="border-border rounded-2xl p-4 shadow-md group cursor-pointer">
-          <div class="product-icon w-16 h-16 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-            <svg class="w-8 h-8 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="5"/>
-              <line x1="12" y1="1" x2="12" y2="3"/>
-              <line x1="12" y1="21" x2="12" y2="23"/>
-              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-              <line x1="1" y1="12" x2="3" y2="12"/>
-              <line x1="21" y1="12" x2="23" y2="12"/>
-              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">紫外消毒模块</h3>
-          <p class="text-gray-300 text-sm leading-relaxed mb-4">
-            254nm紫外线杀菌技术，杀菌率达99.9%，无需添加化学药剂，绿色环保。
-          </p>
-          <div class="flex items-center text-accent text-sm font-medium">
-            <span>了解更多</span>
-            <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
-          </div>
-        </a>
-        
-        <!-- 反应池搅拌器 -->
-        <a href="products.html#reactor-agitator" class="border-border rounded-2xl p-4 shadow-md group cursor-pointer">
-          <div class="product-icon w-16 h-16 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-            <svg class="w-8 h-8 text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="3"/>
-              <path d="M12 1v4"/>
-              <path d="M12 19v4"/>
-              <path d="M4.93 4.93l2.83 2.83"/>
-              <path d="M16.24 16.24l2.83 2.83"/>
-              <path d="M1 12h4"/>
-              <path d="M19 12h4"/>
-              <path d="M4.93 19.07l2.83-2.83"/>
-              <path d="M16.24 7.76l2.83-2.83"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">反应池搅拌器</h3>
-          <p class="text-gray-300 text-sm leading-relaxed mb-4">
-            304不锈钢材质，变频控制，IP68防护等级，运行平稳无死角。
-          </p>
-          <div class="flex items-center text-blue-400 text-sm font-medium">
-            <span>了解更多</span>
-            <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
-          </div>
-        </a>
-
-        <!-- 高速剪切机 -->
-        <a href="products.html#high-shear-machine" class="border-border rounded-2xl p-4 shadow-md group cursor-pointer">
-          <div class="product-icon w-16 h-16 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-            <svg class="w-8 h-8 text-orange-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="3"/>
-              <path d="M12 1v2"/>
-              <path d="M12 21v2"/>
-              <path d="M4.22 4.22l1.42 1.42"/>
-              <path d="M18.36 18.36l1.42 1.42"/>
-              <path d="M1 12h2"/>
-              <path d="M21 12h2"/>
-              <path d="M4.22 19.78l1.42-1.42"/>
-              <path d="M18.36 5.64l1.42-1.42"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">高速剪切机</h3>
-          <p class="text-gray-300 text-sm leading-relaxed mb-4">
-            高速旋转剪切打散矾花，提高沉淀分离效果，变频调速，运行平稳。
-          </p>
-          <div class="flex items-center text-orange-500 text-sm font-medium">
-            <span>了解更多</span>
-            <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
-          </div>
-        </a>
-
-        <!-- 磁混凝 -->
-        <a href="products.html#magnetic-flocculation" class="border-border rounded-2xl p-4 shadow-md group cursor-pointer">
-          <div class="product-icon w-16 h-16 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-            <svg class="w-8 h-8 text-purple-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="3" y="3" width="18" height="18" rx="2"/>
-              <path d="M3 9h18"/>
-              <path d="M9 21V9"/>
-            </svg>
-          </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">磁混凝设备</h3>
-          <p class="text-gray-300 text-sm leading-relaxed mb-4">
-            磁分离与絮凝反应完美结合，一体化设计，处理效率高，占地面积小。
-          </p>
-          <div class="flex items-center text-purple-500 text-sm font-medium">
-            <span>了解更多</span>
-            <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
-          </div>
-        </a>
       </div>
     </div>
   </section>
-
-  <!-- 关于我们 -->
-  <section id="about" class="relative py-20 lg:py-32 overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent"></div>
-    
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-        <!-- 左侧内容 -->
-        <div>
-          <div class="text-sm text-gray-900 font-medium tracking-widest uppercase mb-3">About Us</div>
-          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">关于恒派智能科技</h2>
-          <div class="w-16 h-1 bg-gradient-to-r from-primary to-secondary rounded-full mb-8"></div>
-          
-          <div class="space-y-5 text-gray-300 leading-relaxed">
-            <p>
-              山东恒派智能科技有限公司坐落于山东省临沂市兰山区，是一家专注于环保水处理设备研发、制造和销售的高新技术企业。
-            </p>
-            <p>
-              公司核心产品包括磁分离机、高精度过滤器、紫外消毒模块及反应池搅拌器等，广泛应用于市政污水、工业废水、食品饮料、制药、化工等行业领域。
-            </p>
-            <p>
-              我们拥有一支经验丰富的技术研发团队，不断创新，追求卓越，为客户提供高效、可靠、节能环保的水处理解决方案。
-            </p>
+  
+  <section id="products" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>核心产品</h2>
+        <p>自主研发核心技术，持续创新，为客户提供高效可靠的水处理解决方案</p>
+      </div>
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="mag_v1.jpg" alt="磁分离机" class="product-img" onerror="this.style.display='none'">
           </div>
-          
-          <!-- 核心优势 -->
-          <div class="grid grid-cols-2 gap-4 mt-10">
-            <div class="p-4 rounded-xl bg-light-card border border-blue-200 shadow-sm">
-              <i data-lucide="shield-check" class="w-8 h-8 text-gray-900 mb-3"></i>
-              <div class="text-gray-900 font-bold">品质保证</div>
-              <div class="text-gray-300 text-sm">ISO9001认证</div>
-            </div>
-            <div class="p-4 rounded-xl bg-light-card border border-blue-200 shadow-sm">
-              <i data-lucide="wrench" class="w-8 h-8 text-gray-700 mb-3"></i>
-              <div class="text-gray-900 font-bold">定制服务</div>
-              <div class="text-gray-300 text-sm">按需定制方案</div>
-            </div>
-            <div class="p-4 rounded-xl bg-light-card border border-blue-200 shadow-sm">
-              <i data-lucide="truck" class="w-8 h-8 text-accent mb-3"></i>
-              <div class="text-gray-900 font-bold">快速交付</div>
-              <div class="text-gray-300 text-sm">全国物流配送</div>
-            </div>
-            <div class="p-4 rounded-xl bg-light-card border border-blue-200 shadow-sm">
-              <i data-lucide="headphones" class="w-8 h-8 text-blue-400 mb-3"></i>
-              <div class="text-gray-900 font-bold">技术支持</div>
-              <div class="text-gray-300 text-sm">24/7在线服务</div>
-            </div>
+          <div class="product-info">
+            <h3>磁分离机</h3>
+            <p>高效固液分离设备，通过外加磁场快速分离磁性污染物和磁粉，显著提高污水处理效率</p>
           </div>
         </div>
-        
-        <!-- 右侧数据展示 -->
-        <div class="relative">
-          <div class="absolute -inset-4 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-3xl blur-xl opacity-50"></div>
-          <div class="relative bg-light-card rounded-2xl p-4 lg:p-10 border border-blue-200 shadow-sm">
-            <div class="grid grid-cols-2 gap-4">
-              <div class="text-center">
-                <div class="text-4xl lg:text-5xl font-bold text-gradient mb-2">10+</div>
-                <div class="text-gray-100">年行业经验</div>
-              </div>
-              <div class="text-center">
-                <div class="text-4xl lg:text-5xl font-bold text-gradient mb-2">100+</div>
-                <div class="text-gray-100">成功案例</div>
-              </div>
-              <div class="text-center">
-                <div class="text-4xl lg:text-5xl font-bold text-gradient mb-2">50+</div>
-                <div class="text-gray-100">合作客户</div>
-              </div>
-              <div class="text-center">
-                <div class="text-4xl lg:text-5xl font-bold text-gradient mb-2">98%</div>
-                <div class="text-gray-100">客户满意度</div>
-              </div>
-            </div>
-            
-            <!-- 装饰元素 -->
-            <div class="absolute top-4 right-4 w-20 h-20 ring-decoration opacity-30"></div>
-            <div class="absolute bottom-4 left-4 w-12 h-12 ring-decoration opacity-20"></div>
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="filter_v1.jpg" alt="转鼓式精密过滤器" class="product-img" onerror="this.style.display='none'">
+          </div>
+          <div class="product-info">
+            <h3>转鼓式精密过滤器</h3>
+            <p>多级过滤技术，可配置微米级滤网，有效去除悬浮物、细小颗粒和胶体物质</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="uv_v1.jpg" alt="明渠式紫外线消毒器" class="product-img" onerror="this.style.display='none'">
+          </div>
+          <div class="product-info">
+            <h3>明渠式紫外线消毒器</h3>
+            <p>254nm波长紫外线杀菌技术，杀菌率高达99.9%，无需添加化学药剂</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src="product_reactor_agitator.jpg" alt="非金属高速剪切机" class="product-img" onerror="this.style.display='none'">
+          </div>
+          <div class="product-info">
+            <h3>非金属高速剪切机</h3>
+            <p>变频调速，可根据工艺要求灵活调整剪切强度，提高后续沉淀分离效果</p>
           </div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- 联系方式 -->
-  <section id="contact" class="relative py-20 lg:py-32 grid-bg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <div class="text-sm text-gray-900 font-medium tracking-widest uppercase mb-3">Contact Us</div>
-        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">联系我们</h2>
-        <div class="w-16 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+  
+  <section class="features-section section">
+    <div class="container">
+      <div class="section-header">
+        <h2>为什么选择恒派</h2>
+        <p>专业技术团队，为您提供高品质的水处理设备和服务</p>
       </div>
-      
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
-        <!-- 联系卡片 -->
-        <div class="border-border rounded-2xl p-4 shadow-md text-center">
-          <div class="w-16 h-16 mx-auto rounded-xl bg-primary/10 flex items-center justify-center mb-5">
-            <i data-lucide="user" class="w-8 h-8 text-gray-900"></i>
-          </div>
-          <h3 class="text-lg font-bold text-gray-900 mb-2">联系人</h3>
-          <p class="text-gray-100">王经理</p>
+      <div class="features-grid">
+        <div class="feature">
+          <div class="feature-icon">💡</div>
+          <h3>技术研发</h3>
+          <p>自主研发核心技术，持续创新，拥有多项专利</p>
         </div>
-        
-        <div class="border-border rounded-2xl p-4 shadow-md text-center">
-          <div class="w-16 h-16 mx-auto rounded-xl bg-secondary/10 flex items-center justify-center mb-5">
-            <i data-lucide="phone" class="w-8 h-8 text-gray-700"></i>
-          </div>
-          <h3 class="text-lg font-bold text-gray-900 mb-2">联系电话</h3>
-          <a href="tel:17653901110" class="text-gray-900 hover:underline">17653901110</a>
+        <div class="feature">
+          <div class="feature-icon">✓</div>
+          <h3>品质保障</h3>
+          <p>ISO9001质量认证，关键部件采用国际知名品牌</p>
         </div>
-        
-        <div class="border-border rounded-2xl p-4 shadow-md text-center">
-          <div class="w-16 h-16 mx-auto rounded-xl bg-accent/10 flex items-center justify-center mb-5">
-            <i data-lucide="map-pin" class="w-8 h-8 text-accent"></i>
-          </div>
-          <h3 class="text-lg font-bold text-gray-900 mb-2">公司地址</h3>
-          <p class="text-gray-300 text-sm">山东省临沂市兰山区</p>
+        <div class="feature">
+          <div class="feature-icon">🚚</div>
+          <h3>快速交付</h3>
+          <p>标准化生产流程，支持全国物流配送</p>
         </div>
-      </div>
-      
-      <!-- CTA -->
-      <div class="mt-16 text-center">
-        <a href="contact.html" class="btn-primary inline-flex items-center space-x-2 px-8 py-4 rounded-lg text-gray-900 font-medium">
-          <span>在线咨询</span>
-          <i data-lucide="message-circle" class="w-5 h-5"></i>
-        </a>
+        <div class="feature">
+          <div class="feature-icon">🎧</div>
+          <h3>售后服务</h3>
+          <p>24/7技术支持，专业售后团队响应及时</p>
+        </div>
       </div>
     </div>
   </section>
-
-  <!-- Footer -->
-  <footer class="relative py-8 border-t border-white/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-        <div class="flex items-center space-x-3">
-          <img src="logo.png" alt="SDHP" class="w-12 h-12 rounded-lg object-contain">
-          <div>
-            <div class="text-lg font-bold text-gray-900">山东恒派智能科技有限公司</div>
-            <div class="text-xs text-gray-300">专注水处理设备 · 磁分离技术专家</div>
+  
+  <section id="about" class="about-section section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <h2>关于恒派智能科技</h2>
+          <p>山东恒派智能科技有限公司坐落于山东省临沂市兰山区，专注于高端环保水处理设备的研发与制造，是行业内领先的磁分离技术专家。</p>
+          <p>我们深知水是生命之源，环境是百年大计。凭借十余年的技术沉淀，恒派自主研发出多款核心产品，广泛应用于市政污水、工业废水、食品饮料、制药、化工等领域，为数千家客户提供稳定可靠的水处理解决方案。</p>
+          <p>我们相信：好的设备，不仅要高效运行，更要省心耐用。从方案设计到设备交付，从安装调试到售后运维，恒派团队始终以专业、诚信的态度，为每一位客户创造价值。</p>
+        </div>
+        <div class="stats-grid">
+          <div class="stat">
+            <div class="stat-num">10+</div>
+            <div class="stat-label">年行业经验</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">100+</div>
+            <div class="stat-label">成功案例</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">50+</div>
+            <div class="stat-label">合作客户</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">98%</div>
+            <div class="stat-label">客户满意度</div>
           </div>
         </div>
-        
-        <div class="flex items-center space-x-6 text-sm text-gray-300">
-          <a href="index.html" class="hover:text-gray-900 transition-colors">首页</a>
-          <a href="products.html" class="hover:text-gray-900 transition-colors">产品中心</a>
-          <a href="about.html" class="hover:text-gray-900 transition-colors">关于我们</a>
-          <a href="contact.html" class="hover:text-gray-900 transition-colors">联系我们</a>
+      </div>
+    </div>
+  </section>
+  
+  <section id="contact" class="contact-section section">
+    <div class="container">
+      <div class="section-header">
+        <h2>联系我们</h2>
+        <p>期待与您的合作，为您提供专业的水处理解决方案</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>联系人</h3>
+          <p>王经理</p>
         </div>
-        
-        <div class="text-sm text-gray-300">
-          © 2024 山东恒派智能科技 版权所有
+        <div class="contact-card">
+          <h3>在线咨询</h3>
+          <p>点击右侧按钮联系客服</p>
         </div>
+        <div class="contact-card">
+          <h3>公司地址</h3>
+          <p>山东省临沂市兰山区</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>山东恒派智能科技有限公司</h3>
+          <p>专注水处理设备研发制造 · 磁分离技术专家 · 为客户提供高效、可靠、节能环保的水处理解决方案</p>
+        </div>
+        <div class="footer-links">
+          <h4>快速链接</h4>
+          <a href="#">首页</a>
+          <a href="#products">产品中心</a>
+          <a href="#about">关于我们</a>
+          <a href="#contact">联系我们</a>
+        </div>
+        <div class="footer-links">
+          <h4>产品中心</h4>
+          <a href="#">磁分离机</a>
+          <a href="#">转鼓式精密过滤器</a>
+          <a href="#">明渠式紫外线消毒器</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2024 山东恒派智能科技 版权所有
       </div>
     </div>
   </footer>
 
+  <canvas id="particles-canvas"></canvas>
   <script>
-    // 初始化 Lucide 图标
-    lucide.createIcons();
-    
-    // 粒子背景
     const canvas = document.getElementById('particles-canvas');
     const ctx = canvas.getContext('2d');
     let particles = [];
+    let animationId;
     
     function resizeCanvas() {
       canvas.width = window.innerWidth;
@@ -629,95 +496,74 @@
     
     function createParticles() {
       particles = [];
-      const particleCount = Math.floor((canvas.width * canvas.height) / 15000);
+      const particleCount = Math.min(80, Math.floor(window.innerWidth / 15));
       for (let i = 0; i < particleCount; i++) {
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          size: Math.random() * 2 + 0.5,
-          speedX: (Math.random() - 0.5) * 0.3,
-          speedY: (Math.random() - 0.5) * 0.3,
+          vx: (Math.random() - 0.5) * 0.5,
+          vy: (Math.random() - 0.5) * 0.5,
+          size: Math.random() * 2 + 1,
           opacity: Math.random() * 0.5 + 0.2
         });
       }
     }
     
-    function animateParticles() {
+    function drawParticles() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
+      // 绘制粒子
       particles.forEach(p => {
-        p.x += p.speedX;
-        p.y += p.speedY;
-        
-        if (p.x < 0) p.x = canvas.width;
-        if (p.x > canvas.width) p.x = 0;
-        if (p.y < 0) p.y = canvas.height;
-        if (p.y > canvas.height) p.y = 0;
-        
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(0, 119, 255, ${p.opacity})`;
+        ctx.fillStyle = `rgba(0, 102, 238, ${p.opacity})`;
         ctx.fill();
+        
+        // 更新位置
+        p.x += p.vx;
+        p.y += p.vy;
+        
+        // 边界检测
+        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
       });
       
-      // 连接相近的粒子
+      // 绘制连线
       particles.forEach((p1, i) => {
         particles.slice(i + 1).forEach(p2 => {
-          const dx = p1.x - p2.x;
-          const dy = p1.y - p2.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          
-          if (dist < 120) {
+          const dist = Math.hypot(p1.x - p2.x, p1.y - p2.y);
+          if (dist < 150) {
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(0, 119, 255, ${0.1 * (1 - dist / 120)})`;
+            ctx.strokeStyle = `rgba(0, 102, 238, ${0.1 * (1 - dist / 150)})`;
+            ctx.lineWidth = 0.5;
             ctx.stroke();
           }
         });
       });
-      
-      requestAnimationFrame(animateParticles);
+    }
+    
+    function animate() {
+      drawParticles();
+      animationId = requestAnimationFrame(animate);
+    }
+    
+    // 仅在首屏区域显示动画
+    function handleScroll() {
+      const heroHeight = document.querySelector('.hero')?.offsetHeight || 600;
+      canvas.style.opacity = window.scrollY < heroHeight ? '1' : '0.3';
     }
     
     resizeCanvas();
     createParticles();
-    animateParticles();
+    animate();
     
     window.addEventListener('resize', () => {
       resizeCanvas();
       createParticles();
     });
-    
-    // 导航栏滚动效果
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        navbar.classList.add('nav-blur');
-      } else {
-        navbar.classList.remove('nav-blur');
-      }
-    });
-    
-    // 移动端菜单
-    const menuBtn = document.getElementById('menu-btn');
-    const closeMenuBtn = document.getElementById('close-menu');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.add('active');
-    });
-    
-    closeMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.remove('active');
-    });
-    
-    // 点击菜单链接关闭
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-      });
-    });
+    window.addEventListener('scroll', handleScroll);
   </script>
 </body>
 </html>
