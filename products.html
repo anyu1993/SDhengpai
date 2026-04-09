@@ -16,7 +16,7 @@
             primary: '#0066ee',
             secondary: '#00C7BE',
             accent: '#5856D6',
-            dark: { bg: '#f8fafc', card: '#1e293b', border: 'rgba(0,102,238,0.15)' },
+            dark: { bg: '#eff6ff', card: '#1e293b', border: 'rgba(0,102,238,0.15)' },
             text: { primary: '#1e293b', secondary: '#475569' }
           },
           fontFamily: { sans: ['Noto Sans SC', 'Inter', 'sans-serif'], inter: ['Inter', 'sans-serif'] }
@@ -26,10 +26,10 @@
   </script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: #f8fafc; color: #1e293b; font-family: 'Noto Sans SC', sans-serif; }
+    body { background: #eff6ff; color: #1e293b; font-family: 'Noto Sans SC', sans-serif; }
     .border-border { border: 1px solid rgba(0,102,238,0.15); transition: all 0.3s ease; }
     .border-border:hover { border-color: rgba(0,119,255,0.6); box-shadow: 0 0 30px rgba(0,102,238,0.15); transform: translateY(-4px); }
-    .shadow-md { background: linear-gradient(135deg, #1e293b 0%, #f8fafc 100%); }
+    .shadow-md { background: linear-gradient(135deg, #1e293b 0%, #eff6ff 100%); }
     .nav-blur { background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); }
     .text-gradient { background: linear-gradient(135deg, #0066ee 0%, #00C7BE 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .product-icon { background: linear-gradient(135deg, rgba(0,119,255,0.1) 0%, rgba(0,199,190,0.1) 100%); border: 1px solid rgba(0,119,255,0.3); }
@@ -39,14 +39,14 @@
     .mobile-menu { transform: translateX(100%); transition: transform 0.3s ease; }
     .mobile-menu.active { transform: translateX(0); }
   
-    .light-bg { background-color: #f8fafc; }
+    .light-bg { background-color: #eff6ff; }
     .light-card { background-color: #ffffff; }
     .shadow-md p { color: #f1f5f9 !important; }
     .rounded-xl.bg-white .text-gray-300 { color: #475569 !important; }
     .light-border { border-color: rgba(0,102,238,0.15); }
     .text-gray-900 { color: #1e293b; }
     .text-gray-700 { color: #475569; }
-    .bg-white { background-color: #f8fafc; }
+    .bg-white { background-color: #eff6ff; }
     .bg-light-card { background-color: #ffffff; }
     
   </style>
@@ -78,7 +78,7 @@
         <button id="menu-btn" class="md:hidden text-gray-900 p-2"><i data-lucide="menu" class="w-6 h-6"></i></button>
       </div>
     </div>
-    <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-72 bg-white border-l border-light-border md:hidden">
+    <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-72 bg-white border-l border-blue-200 md:hidden">
       <div class="p-4">
         <button id="close-menu" class="absolute top-4 right-6 text-gray-900"><i data-lucide="x" class="w-6 h-6"></i></button>
         <div class="mt-12 space-y-6">
@@ -119,19 +119,19 @@
               磁分离机是针对工业废水处理的高效固液分离设备。通过外加磁场作用，快速分离水体中的磁性污染物和磁粉，显著提高污水处理效率。设备采用优质不锈钢材质，结构坚固，运行稳定，维护简便。
             </p>
             <div class="grid grid-cols-2 gap-4 mb-8">
-              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+              <div class="p-4 rounded-xl bg-white border border-blue-200 shadow-sm">
                 <div class="text-2xl font-bold text-gradient mb-1">1-100</div>
                 <div class="text-gray-300 text-sm">处理量 T/h</div>
               </div>
-              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+              <div class="p-4 rounded-xl bg-white border border-blue-200 shadow-sm">
                 <div class="text-2xl font-bold text-gradient mb-1">99.9%</div>
                 <div class="text-gray-300 text-sm">分离效率</div>
               </div>
-              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+              <div class="p-4 rounded-xl bg-white border border-blue-200 shadow-sm">
                 <div class="text-2xl font-bold text-gradient mb-1">304</div>
                 <div class="text-gray-300 text-sm">不锈钢材质</div>
               </div>
-              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+              <div class="p-4 rounded-xl bg-white border border-blue-200 shadow-sm">
                 <div class="text-2xl font-bold text-gradient mb-1">IP68</div>
                 <div class="text-gray-300 text-sm">防护等级</div>
               </div>
@@ -185,19 +185,19 @@
               高精度过滤器采用多级过滤技术，可根据需求配置微米级滤网，有效去除水体中的悬浮物、细小颗粒、胶体物质等。过滤精度可根据工艺要求灵活调整，产水水质稳定达到后续工艺要求。
             </p>
             <div class="grid grid-cols-2 gap-4 mb-8">
-              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+              <div class="p-4 rounded-xl bg-white border border-blue-200 shadow-sm">
                 <div class="text-2xl font-bold text-gradient mb-1">0.1-50</div>
                 <div class="text-gray-300 text-sm">过滤精度 μm</div>
               </div>
-              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+              <div class="p-4 rounded-xl bg-white border border-blue-200 shadow-sm">
                 <div class="text-2xl font-bold text-gradient mb-1">自动</div>
                 <div class="text-gray-300 text-sm">反冲洗功能</div>
               </div>
-              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+              <div class="p-4 rounded-xl bg-white border border-blue-200 shadow-sm">
                 <div class="text-2xl font-bold text-gradient mb-1">316L</div>
                 <div class="text-gray-300 text-sm">可选材质</div>
               </div>
-              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+              <div class="p-4 rounded-xl bg-white border border-blue-200 shadow-sm">
                 <div class="text-2xl font-bold text-gradient mb-1">低阻力</div>
                 <div class="text-gray-300 text-sm">运行能耗小</div>
               </div>
@@ -223,19 +223,19 @@
               紫外消毒模块采用254nm波长紫外线杀菌技术，能有效破坏微生物DNA/RNA，杀菌率高达99.9%。整个消毒过程无需添加任何化学药剂，不产生二次污染，是绿色环保的消毒解决方案。
             </p>
             <div class="grid grid-cols-2 gap-4 mb-8">
-              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+              <div class="p-4 rounded-xl bg-white border border-blue-200 shadow-sm">
                 <div class="text-2xl font-bold text-gradient mb-1">99.9%</div>
                 <div class="text-gray-300 text-sm">杀菌率</div>
               </div>
-              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+              <div class="p-4 rounded-xl bg-white border border-blue-200 shadow-sm">
                 <div class="text-2xl font-bold text-gradient mb-1">254nm</div>
                 <div class="text-gray-300 text-sm">最佳波长</div>
               </div>
-              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+              <div class="p-4 rounded-xl bg-white border border-blue-200 shadow-sm">
                 <div class="text-2xl font-bold text-gradient mb-1">0</div>
                 <div class="text-gray-300 text-sm">化学药剂</div>
               </div>
-              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+              <div class="p-4 rounded-xl bg-white border border-blue-200 shadow-sm">
                 <div class="text-2xl font-bold text-gradient mb-1">实时</div>
                 <div class="text-gray-300 text-sm">在线监测</div>
               </div>
@@ -278,19 +278,19 @@
               反应池搅拌器专为加磁高效沉淀池设计，采用三叶折桨式搅拌桨叶，双层/单层布置可选。设备通过搅拌使池内污水、磁粉、药剂充分混合，形成均匀混合液。变频可调转速，IP68水下防护，运行平稳无死角。
             </p>
             <div class="grid grid-cols-2 gap-4 mb-8">
-              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+              <div class="p-4 rounded-xl bg-white border border-blue-200 shadow-sm">
                 <div class="text-2xl font-bold text-gradient mb-1">304</div>
                 <div class="text-gray-300 text-sm">不锈钢材质</div>
               </div>
-              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+              <div class="p-4 rounded-xl bg-white border border-blue-200 shadow-sm">
                 <div class="text-2xl font-bold text-gradient mb-1">IP68</div>
                 <div class="text-gray-300 text-sm">水下防护</div>
               </div>
-              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+              <div class="p-4 rounded-xl bg-white border border-blue-200 shadow-sm">
                 <div class="text-2xl font-bold text-gradient mb-1">变频</div>
                 <div class="text-gray-300 text-sm">转速可调</div>
               </div>
-              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+              <div class="p-4 rounded-xl bg-white border border-blue-200 shadow-sm">
                 <div class="text-2xl font-bold text-gradient mb-1">诺德</div>
                 <div class="text-gray-300 text-sm">品牌电机</div>
               </div>
@@ -316,19 +316,19 @@
               非金属高速剪切机是磁分离系统中的关键配套设备，通过高速旋转的刀片将絮凝形成的磁粉矾花打散破碎，形成更小的絮体，提高后续沉淀和分离效果。设备采用变频调速，可根据工艺要求灵活调整剪切强度。
             </p>
             <div class="grid grid-cols-2 gap-4 mb-8">
-              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+              <div class="p-4 rounded-xl bg-white border border-blue-200 shadow-sm">
                 <div class="text-2xl font-bold text-gradient mb-1">0-3000</div>
                 <div class="text-gray-300 text-sm">转速 rpm</div>
               </div>
-              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+              <div class="p-4 rounded-xl bg-white border border-blue-200 shadow-sm">
                 <div class="text-2xl font-bold text-gradient mb-1">变频</div>
                 <div class="text-gray-300 text-sm">速度可调</div>
               </div>
-              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+              <div class="p-4 rounded-xl bg-white border border-blue-200 shadow-sm">
                 <div class="text-2xl font-bold text-gradient mb-1">304</div>
                 <div class="text-gray-300 text-sm">不锈钢材质</div>
               </div>
-              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+              <div class="p-4 rounded-xl bg-white border border-blue-200 shadow-sm">
                 <div class="text-2xl font-bold text-gradient mb-1">低噪音</div>
                 <div class="text-gray-300 text-sm">运行平稳</div>
               </div>
@@ -360,19 +360,19 @@
               磁混凝一体化设备将磁分离技术与絮凝反应完美结合，集混合、反应、沉淀于一体。设备结构紧凑，处理效率高，适用于市政污水和工业废水处理。能有效去除水中的悬浮物、色度和有机物。
             </p>
             <div class="grid grid-cols-2 gap-4 mb-8">
-              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+              <div class="p-4 rounded-xl bg-white border border-blue-200 shadow-sm">
                 <div class="text-2xl font-bold text-gradient mb-1">一体化</div>
                 <div class="text-gray-300 text-sm">集成设计</div>
               </div>
-              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+              <div class="p-4 rounded-xl bg-white border border-blue-200 shadow-sm">
                 <div class="text-2xl font-bold text-gradient mb-1">10-500</div>
                 <div class="text-gray-300 text-sm">处理量 T/h</div>
               </div>
-              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+              <div class="p-4 rounded-xl bg-white border border-blue-200 shadow-sm">
                 <div class="text-2xl font-bold text-gradient mb-1">全自动</div>
                 <div class="text-gray-300 text-sm">智能控制</div>
               </div>
-              <div class="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
+              <div class="p-4 rounded-xl bg-white border border-blue-200 shadow-sm">
                 <div class="text-2xl font-bold text-gradient mb-1">占地小</div>
                 <div class="text-gray-300 text-sm">节省空间</div>
               </div>
