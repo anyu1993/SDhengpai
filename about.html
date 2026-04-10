@@ -1,359 +1,345 @@
 <!DOCTYPE html>
-<html lang="zh-CN" class="dark">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>关于我们 - 恒派智能科技</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: { primary: '#2563EB', secondary: '#7C3AED', dark: '#0F172A', darkcard: '#1E293B' },
-          fontFamily: { sans: ['Inter', 'sans-serif'] },
-        }
-      }
-    };
-  </script>
-  <style>
-    html { scroll-behavior: smooth; }
-    .card-hover { transition: transform 0.3s, box-shadow 0.3s; }
-    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(37,99,235,0.15); }
-    .nav-link { position: relative; }
-    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:#2563EB; transition:width 0.3s; }
-    .nav-link:hover::after { width:100%; }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于我们 - 山东恒派智能科技有限公司</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230052FF' rx='20' width='100' height='100'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='60' fill='white'>H</text></svg>">
 </head>
-<body class="bg-white dark:bg-dark text-slate-800 dark:text-slate-100 font-sans">
-
-  <!-- 导航栏 -->
-  <nav class="sticky top-0 z-50 bg-white/90 dark:bg-dark/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-700 shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        <a href="index.html" class="flex items-center gap-3">
-          <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0052FF] to-[#4D7CFF] flex items-center justify-center shadow-accent">
+            <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
             </svg>
           </div>
-          <span class="font-bold text-lg text-slate-900 dark:text-white tracking-tight">恒派智能科技</span>
+          <span class="font-display text-xl">恒派水务</span>
         </a>
-        <div class="hidden md:flex items-center gap-8">
-          <a href="index.html" class="nav-link text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary">首页</a>
-          <a href="products.html" class="nav-link text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary">产品中心</a>
-          <a href="about.html" class="nav-link text-sm font-medium text-primary">关于我们</a>
-          <a href="news.html" class="nav-link text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary">新闻动态</a>
-          <a href="contact.html" class="nav-link text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary">在线咨询</a>
+        <div class="hidden md:flex items-center gap-1">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="products.html" class="nav-link">产品中心</a>
+          <a href="about.html" class="nav-link active">关于我们</a>
+          <a href="news.html" class="nav-link">新闻动态</a>
+          <a href="contact.html" class="nav-link">联系我们</a>
         </div>
-        <button id="theme-toggle" class="p-2 rounded-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
-          <svg id="icon-moon" class="w-5 h-5 hidden dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-          <svg id="icon-sun" class="w-5 h-5 block dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-          </svg>
-        </button>
-        <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600 dark:text-slate-300">
-          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
-          </svg>
-        </button>
+        <div class="flex items-center gap-3">
+          <button id="theme-toggle" class="w-11 h-11 rounded-xl flex items-center justify-center hover:bg-muted transition-colors" aria-label="切换主题">
+            <svg id="icon-sun" class="w-5 h-5 hidden dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+            <svg id="icon-moon" class="w-5 h-5 block dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </button>
+          <button id="mobile-menu-btn" class="md:hidden w-11 h-11 rounded-xl flex items-center justify-center hover:bg-muted transition-colors">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-dark border-t border-slate-200 dark:border-slate-700 px-4 pb-4">
-      <a href="index.html" class="block py-2 text-sm text-slate-600 dark:text-slate-300">首页</a>
-      <a href="products.html" class="block py-2 text-sm text-slate-600 dark:text-slate-300">产品中心</a>
-      <a href="about.html" class="block py-2 text-sm font-medium text-primary">关于我们</a>
-      <a href="news.html" class="block py-2 text-sm text-slate-600 dark:text-slate-300">新闻动态</a>
-      <a href="contact.html" class="block py-2 text-sm text-slate-600 dark:text-slate-300">在线咨询</a>
+    <div id="mobile-menu" class="md:hidden hidden border-t border-default bg-background/95 backdrop-blur-xl">
+      <div class="container py-4 space-y-1">
+        <a href="index.html" class="block px-4 py-3 rounded-lg text-sm font-medium hover:bg-muted">首页</a>
+        <a href="products.html" class="block px-4 py-3 rounded-lg text-sm font-medium hover:bg-muted">产品中心</a>
+        <a href="about.html" class="block px-4 py-3 rounded-lg text-sm font-medium bg-muted">关于我们</a>
+        <a href="news.html" class="block px-4 py-3 rounded-lg text-sm font-medium hover:bg-muted">新闻动态</a>
+        <a href="contact.html" class="block px-4 py-3 rounded-lg text-sm font-medium hover:bg-muted">联系我们</a>
+      </div>
     </div>
   </nav>
 
-  <!-- 页面标题 -->
-  <section class="pt-24 pb-16 px-4 bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">
-    <div class="max-w-7xl mx-auto text-center">
-      <span class="text-primary font-semibold text-sm tracking-widest uppercase">About Us</span>
-      <h1 class="mt-3 text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white">关于我们</h1>
-      <p class="mt-4 text-slate-500 dark:text-slate-400 max-w-2xl mx-auto text-lg">专注磁分离技术十余年，用硬核产品与专业服务，让每一滴水回归纯净</p>
+  <!-- Page Hero -->
+  <section class="pt-28 pb-16 relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-0 right-0 w-[500px] h-[400px] bg-gradient-to-br from-[#0052FF]/10 to-[#4D7CFF]/5 rounded-full blur-[100px]"></div>
     </div>
-  </section>
-
-  <!-- 数据统计 -->
-  <section class="py-16 bg-white dark:bg-dark border-b border-slate-200 dark:border-slate-700">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-        <div><div class="text-4xl md:text-5xl font-bold text-primary mb-2">70+</div><p class="text-sm text-slate-500 dark:text-slate-400 font-medium">工程项目</p></div>
-        <div><div class="text-4xl md:text-5xl font-bold text-secondary mb-2">50+</div><p class="text-sm text-slate-500 dark:text-slate-400 font-medium">合作企业</p></div>
-        <div><div class="text-4xl md:text-5xl font-bold text-green-600 mb-2">6</div><p class="text-sm text-slate-500 dark:text-slate-400 font-medium">核心产品</p></div>
-        <div><div class="text-4xl md:text-5xl font-bold text-teal-600 mb-2">10+</div><p class="text-sm text-slate-500 dark:text-slate-400 font-medium">项专利技术</p></div>
+    <div class="container relative">
+      <div class="max-w-2xl">
+        <div class="section-label mb-6"><span class="dot"></span><span>关于我们</span></div>
+        <h1 class="text-4xl md:text-5xl font-display mb-4">专注<span class="gradient-text">磁分离技术</span></h1>
+        <p class="text-lg text-muted-foreground">15年深耕工业水处理领域，为客户提供高效、稳定、智能的磁分离水处理设备</p>
       </div>
     </div>
   </section>
 
-  <!-- 公司介绍 -->
-  <section class="py-20 bg-slate-50 dark:bg-slate-800/50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <span class="text-primary font-semibold text-sm tracking-widest uppercase">Our Story</span>
-        <h2 class="mt-2 text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">每一滴水，都值得被认真对待</h2>
-        <p class="mt-4 text-slate-500 dark:text-slate-400 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
-          矿井深处，水在流淌。我们相信：清洁的水资源，是工业可持续发展的根基。<br/>
-          这份信念，驱动山东恒派智能科技有限公司，在水处理之路上坚定前行十余年。
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-12 items-start">
-        <div class="space-y-8">
-          <!-- 使命 -->
-          <div class="flex gap-4">
-            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center">
-              <svg class="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-            </div>
-            <div>
-              <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">我们的使命</h3>
-              <p class="text-slate-600 dark:text-slate-300 leading-relaxed">以磁分离技术为核心，致力于为矿山、市政、工业客户提供高效、稳定、可靠的水处理设备与零排放解决方案，让每一滴水都回归纯净。</p>
-            </div>
-          </div>
-          <!-- 愿景 -->
-          <div class="flex gap-4">
-            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center">
-              <svg class="w-6 h-6 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-            </div>
-            <div>
-              <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">我们的愿景</h3>
-              <p class="text-slate-600 dark:text-slate-300 leading-relaxed">成为中国矿井水零排放处理领域的领先品牌，以技术创新驱动行业标准，以品质服务赢得客户信赖，成为客户在水处理领域最值得托付的合作伙伴。</p>
-            </div>
-          </div>
-          <!-- 核心价值 -->
-          <div class="flex gap-4">
-            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-green-100 dark:bg-green-900/40 flex items-center justify-center">
-              <svg class="w-6 h-6 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <div>
-              <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">核心价值观</h3>
-              <p class="text-slate-600 dark:text-slate-300 leading-relaxed">技术立命——以十余年技术积累为根基；品质为先——每一台设备都经得起严苛检验；客户为本——全周期服务，响应快、解决准；持续创新——不断突破，追求更优。</p>
-            </div>
-          </div>
-          <!-- 团队/服务 -->
-          <div class="flex gap-4">
-            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-orange-100 dark:bg-orange-900/40 flex items-center justify-center">
-              <svg class="w-6 h-6 text-orange-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-            </div>
-            <div>
-              <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">专业团队，全周期服务</h3>
-              <p class="text-slate-600 dark:text-slate-300 leading-relaxed">核心团队由资深水处理工程师与环保技术专家组成，十年以上行业深耕。服务贯穿需求诊断、方案设计、设备制造、安装调试、运营维护全流程，7×24小时响应客户需求。</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 右侧：产品矩阵 -->
+  <!-- Company Introduction -->
+  <section class="py-20 lg:py-32">
+    <div class="container">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
         <div>
-          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6">主营产品矩阵</h3>
-          <div class="grid grid-cols-2 gap-4">
-            <div class="bg-white dark:bg-darkcard rounded-xl p-5 border border-slate-200 dark:border-slate-700 hover:border-primary/40 transition-colors">
-              <div class="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center mb-3">
-                <svg class="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-              </div>
-              <h4 class="font-semibold text-slate-900 dark:text-white text-sm">磁絮凝分离设备</h4>
-              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">磁粉回收率&gt;99%，高效去除悬浮物</p>
-            </div>
-            <div class="bg-white dark:bg-darkcard rounded-xl p-5 border border-slate-200 dark:border-slate-700 hover:border-secondary/40 transition-colors">
-              <div class="w-10 h-10 rounded-lg bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center mb-3">
-                <svg class="w-5 h-5 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-              </div>
-              <h4 class="font-semibold text-slate-900 dark:text-white text-sm">转鼓式精密过滤器</h4>
-              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">8~50μm过滤精度，无人值守运行</p>
-            </div>
-            <div class="bg-white dark:bg-darkcard rounded-xl p-5 border border-slate-200 dark:border-slate-700 hover:border-green-500/40 transition-colors">
-              <div class="w-10 h-10 rounded-lg bg-green-100 dark:bg-green-900/40 flex items-center justify-center mb-3">
-                <svg class="w-5 h-5 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              </div>
-              <h4 class="font-semibold text-slate-900 dark:text-white text-sm">UV紫外线消毒器</h4>
-              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">杀菌率&gt;99.99%，明渠式设计</p>
-            </div>
-            <div class="bg-white dark:bg-darkcard rounded-xl p-5 border border-slate-200 dark:border-slate-700 hover:border-orange-500/40 transition-colors">
-              <div class="w-10 h-10 rounded-lg bg-orange-100 dark:bg-orange-900/40 flex items-center justify-center mb-3">
-                <svg class="w-5 h-5 text-orange-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-              </div>
-              <h4 class="font-semibold text-slate-900 dark:text-white text-sm">反应池搅拌器</h4>
-              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">非金属高速剪切，混合均匀</p>
-            </div>
+          <h2 class="text-3xl md:text-4xl font-display mb-6">山东恒派<span class="gradient-text">智能科技</span></h2>
+          <div class="space-y-4 text-muted-foreground leading-relaxed">
+            <p>山东恒派智能科技有限公司成立于2011年，是一家专注于磁分离技术水处理设备研发、制造、销售和服务的高新技术企业。</p>
+            <p>公司总部位于山东省济南市，拥有一支由20余名工程师组成的技术研发团队，其中高级工程师8人，硕士及以上学历占比超过60%。</p>
+            <p>我们自主研发的磁分离设备已获得12项国家专利，产品广泛应用于钢铁冶金、石油化工、矿山机械、食品制药等行业，累计服务客户超过200家。</p>
+            <p>公司始终坚持"科技创新、质量第一"的经营理念，致力于为客户提供最可靠的水处理解决方案。</p>
           </div>
-          <div class="mt-4 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl p-5 border border-primary/20 dark:border-secondary/20">
-            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-              <span class="font-semibold text-primary dark:text-blue-400">产品覆盖</span>磁分离、过滤、消毒、搅拌四大核心工艺环节，广泛应用于<span class="font-semibold">矿山矿井、市政污水、工业废水</span>等场景，为客户提供一站式水处理设备解决方案。
-            </p>
-          </div>
-          <div class="mt-6 flex flex-wrap gap-3">
-            <span class="px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-primary text-sm rounded-full font-medium">高新技术企业</span>
-            <span class="px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-secondary text-sm rounded-full font-medium">省级新技术认证</span>
-            <span class="px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-400 text-sm rounded-full font-medium">ISO质量体系</span>
+        </div>
+        <div class="relative">
+          <div class="aspect-square rounded-3xl bg-gradient-to-br from-[#0052FF]/5 to-[#4D7CFF]/10 flex items-center justify-center relative overflow-hidden">
+            <div class="absolute top-8 right-8 w-32 h-32 rounded-full border-2 border-dashed border-[#0052FF]/20"></div>
+            <div class="absolute bottom-8 left-8 w-48 h-48 rounded-full border-2 border-dashed border-[#0052FF]/10"></div>
+            <div class="relative">
+              <div class="w-40 h-40 rounded-3xl bg-gradient-to-br from-[#0052FF] to-[#4D7CFF] flex items-center justify-center shadow-accent-lg">
+                <svg class="w-20 h-20 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 四大优势 -->
-  <section class="py-20 bg-white dark:bg-dark">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl font-bold text-slate-900 dark:text-white">为什么选择恒派</h2>
-        <p class="mt-3 text-slate-500 dark:text-slate-400">十余年专注一件事——用磁分离技术解决矿井水处理难题</p>
+  <!-- Core Values -->
+  <section class="py-20 lg:py-32 section-inverted relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid-pattern" style="color: rgba(255,255,255,0.5);"></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#0052FF]/20 rounded-full blur-[120px]"></div>
+    <div class="container relative">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <div class="section-label mb-6" style="border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.1);"><span class="dot"></span><span style="color: white;">核心优势</span></div>
+        <h2 class="text-3xl md:text-4xl font-display mb-4 text-white">为什么选择<span class="gradient-text">恒派</span></h2>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="card-hover bg-white dark:bg-darkcard rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <div class="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center mb-6"><svg class="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
-          <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-3">技术领先</h3>
-          <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">十余年磁分离技术积累，核心团队拥有十年以上行业经验，持续引领矿井水处理技术标准。</p>
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#0052FF] to-[#4D7CFF] flex items-center justify-center mx-auto mb-5">
+            <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-xl mb-2 text-white">自主研发</h3>
+          <p class="text-sm" style="color: rgba(255,255,255,0.7);">12项国家专利，磁分离核心技术自主可控</p>
         </div>
-        <div class="card-hover bg-white dark:bg-darkcard rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <div class="w-12 h-12 rounded-xl bg-green-100 dark:bg-green-900/40 flex items-center justify-center mb-6"><svg class="w-6 h-6 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-3">稳定可靠</h3>
-          <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">设备经省级鉴定，品质卓越，运行稳定，故障率低，为矿井安全生产提供有力保障。</p>
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#0052FF] to-[#4D7CFF] flex items-center justify-center mx-auto mb-5">
+            <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-xl mb-2 text-white">稳定可靠</h3>
+          <p class="text-sm" style="color: rgba(255,255,255,0.7);">设备连续运行20000+小时无故障记录</p>
         </div>
-        <div class="card-hover bg-white dark:bg-darkcard rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center mb-6"><svg class="w-6 h-6 text-secondary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
-          <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-3">专业服务</h3>
-          <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">从方案设计到安装调试到运营维护，提供全生命周期专业服务，7×24小时技术支持。</p>
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#0052FF] to-[#4D7CFF] flex items-center justify-center mx-auto mb-5">
+            <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-xl mb-2 text-white">专业服务</h3>
+          <p class="text-sm" style="color: rgba(255,255,255,0.7);">7×24小时技术支持，48小时现场响应</p>
         </div>
-        <div class="card-hover bg-white dark:bg-darkcard rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <div class="w-12 h-12 rounded-xl bg-yellow-100 dark:bg-yellow-900/40 flex items-center justify-center mb-6"><svg class="w-6 h-6 text-yellow-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
-          <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-3">高效快速</h3>
-          <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">磁分离技术处理效率高，设备集成化程度高，模块化设计安装便捷，交付周期短。</p>
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#0052FF] to-[#4D7CFF] flex items-center justify-center mx-auto mb-5">
+            <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-xl mb-2 text-white">品质保障</h3>
+          <p class="text-sm" style="color: rgba(255,255,255,0.7);">ISO9001认证，关键部件均为国际一线品牌</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 应用领域 -->
-  <section class="py-20 bg-slate-50 dark:bg-slate-800/50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl font-bold text-slate-900 dark:text-white">应用领域</h2>
-        <p class="mt-3 text-slate-500 dark:text-slate-400">产品广泛适用于多种工业与市政水处理场景</p>
+  <!-- Applications -->
+  <section class="py-20 lg:py-32">
+    <div class="container">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <div class="section-label mb-6"><span class="dot"></span><span>应用领域</span></div>
+        <h2 class="text-3xl md:text-4xl font-display mb-4">广泛<span class="gradient-text">行业应用</span></h2>
+        <p class="text-muted-foreground">我们的设备已成功应用于多个工业领域，服务超过200家企业</p>
       </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer">
-          <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-indigo-700"></div>
-          <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300"></div>
-          <div class="absolute bottom-0 left-0 right-0 p-6">
-            <h3 class="text-white font-semibold text-lg">矿山</h3>
-            <p class="text-white/70 text-sm mt-1">矿井水处理与零排放</p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="card text-center">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#0052FF] to-[#4D7CFF] flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5m-4 0h4"/>
+            </svg>
           </div>
+          <h3 class="font-display text-xl mb-2">钢铁冶金</h3>
+          <p class="text-sm text-muted-foreground">宝钢、鞍钢、山钢等大型钢企指定供应商</p>
         </div>
-        <div class="group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer">
-          <div class="absolute inset-0 bg-gradient-to-br from-emerald-600 to-teal-700"></div>
-          <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300"></div>
-          <div class="absolute bottom-0 left-0 right-0 p-6">
-            <h3 class="text-white font-semibold text-lg">冶金</h3>
-            <p class="text-white/70 text-sm mt-1">工业废水深度处理</p>
+        <div class="card text-center">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#0052FF] to-[#4D7CFF] flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 3h18v18H3zM3 9h18M9 21V9"/>
+            </svg>
           </div>
+          <h3 class="font-display text-xl mb-2">石油化工</h3>
+          <p class="text-sm text-muted-foreground">中石化、中石油合格供应商名录企业</p>
         </div>
-        <div class="group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer">
-          <div class="absolute inset-0 bg-gradient-to-br from-purple-600 to-pink-700"></div>
-          <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300"></div>
-          <div class="absolute bottom-0 left-0 right-0 p-6">
-            <h3 class="text-white font-semibold text-lg">化工</h3>
-            <p class="text-white/70 text-sm mt-1">高盐废水零排放处理</p>
+        <div class="card text-center">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#0052FF] to-[#4D7CFF] flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+              <polyline points="10 9 9 9 8 9"/>
+            </svg>
           </div>
+          <h3 class="font-display text-xl mb-2">矿山机械</h3>
+          <p class="text-sm text-muted-foreground">铁矿、铜矿、金矿等选矿废水处理</p>
         </div>
-        <div class="group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer">
-          <div class="absolute inset-0 bg-gradient-to-br from-orange-600 to-red-700"></div>
-          <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300"></div>
-          <div class="absolute bottom-0 left-0 right-0 p-6">
-            <h3 class="text-white font-semibold text-lg">市政</h3>
-            <p class="text-white/70 text-sm mt-1">污水处理与回用</p>
+        <div class="card text-center">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#0052FF] to-[#4D7CFF] flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v3M10 1v3M14 1v3"/>
+            </svg>
           </div>
+          <h3 class="font-display text-xl mb-2">食品制药</h3>
+          <p class="text-sm text-muted-foreground">食品加工、制药生产废水深度处理</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 资质荣誉 -->
-  <section class="py-20 bg-white dark:bg-dark">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl font-bold text-slate-900 dark:text-white">资质荣誉</h2>
-        <p class="mt-3 text-slate-500 dark:text-slate-400">技术实力获得权威认可与认证</p>
-      </div>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="card-hover bg-white dark:bg-darkcard rounded-2xl p-8 border border-slate-200 dark:border-slate-700 text-center">
-          <div class="w-20 h-20 rounded-full bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center mx-auto mb-5">
-            <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+        <div class="card text-center">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#0052FF] to-[#4D7CFF] flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/>
+            </svg>
           </div>
-          <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-2">国家高新技术企业</h3>
-          <p class="text-sm text-slate-500 dark:text-slate-400">由国家科技部、财政部、税务总局联合认定，代表企业核心技术具有自主知识产权。</p>
+          <h3 class="font-display text-xl mb-2">市政污水</h3>
+          <p class="text-sm text-muted-foreground">市政污水处理厂提标改造工程</p>
         </div>
-        <div class="card-hover bg-white dark:bg-darkcard rounded-2xl p-8 border border-slate-200 dark:border-slate-700 text-center">
-          <div class="w-20 h-20 rounded-full bg-green-100 dark:bg-green-900/40 flex items-center justify-center mx-auto mb-5">
-            <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+        <div class="card text-center">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#0052FF] to-[#4D7CFF] flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+            </svg>
           </div>
-          <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-2">省级新技术新产品认证</h3>
-          <p class="text-sm text-slate-500 dark:text-slate-400">磁絮凝分离设备通过山东省科技厅组织的新技术、新产品鉴定，技术水平达到国内先进。</p>
-        </div>
-        <div class="card-hover bg-white dark:bg-darkcard rounded-2xl p-8 border border-slate-200 dark:border-slate-700 text-center">
-          <div class="w-20 h-20 rounded-full bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center mx-auto mb-5">
-            <svg class="w-10 h-10 text-secondary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
-          </div>
-          <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-2">ISO质量管理体系认证</h3>
-          <p class="text-sm text-slate-500 dark:text-slate-400">通过ISO 9001质量管理体系认证，建立了完善的质量控制与产品追溯体系。</p>
+          <h3 class="font-display text-xl mb-2">电子电力</h3>
+          <p class="text-sm text-muted-foreground">电厂、变电站废水处理与回用</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 页脚 -->
-  <footer class="bg-dark text-slate-300 py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-        <div class="md:col-span-2">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+  <!-- Certifications -->
+  <section class="py-20 lg:py-32 bg-muted/50">
+    <div class="container">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <div class="section-label mb-6"><span class="dot"></span><span>资质荣誉</span></div>
+        <h2 class="text-3xl md:text-4xl font-display mb-4">权威<span class="gradient-text">认证</span></h2>
+        <p class="text-muted-foreground">公司已通过多项国际国内权威认证，产品质量有保障</p>
+      </div>
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="card text-center">
+          <div class="w-20 h-20 rounded-2xl bg-[#0052FF]/10 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-[#0052FF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <polyline points="9 12 11 14 15 10"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-1">ISO9001</h3>
+          <p class="text-sm text-muted-foreground">质量管理体系认证</p>
+        </div>
+        <div class="card text-center">
+          <div class="w-20 h-20 rounded-2xl bg-[#0052FF]/10 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-[#0052FF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-1">欧盟CE</h3>
+          <p class="text-sm text-muted-foreground">UV消毒设备全系列认证</p>
+        </div>
+        <div class="card text-center">
+          <div class="w-20 h-20 rounded-2xl bg-[#0052FF]/10 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-[#0052FF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-1">国家专利</h3>
+          <p class="text-sm text-muted-foreground">12项磁分离核心专利</p>
+        </div>
+        <div class="card text-center">
+          <div class="w-20 h-20 rounded-2xl bg-[#0052FF]/10 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-[#0052FF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-1">高新技术企业</h3>
+          <p class="text-sm text-muted-foreground">省级高新技术企业认定</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t border-default bg-muted/30">
+    <div class="container">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <a href="index.html" class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0052FF] to-[#4D7CFF] flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg>
             </div>
-            <span class="font-bold text-white text-lg">恒派智能科技</span>
-          </div>
-          <p class="text-sm text-slate-400 leading-relaxed">山东恒派智能科技有限公司，专注磁分离技术水处理设备研发制造，是您信赖的矿井水零排放处理专家。地址：山东省临沂市兰山区。</p>
+            <span class="font-display text-xl">恒派水务</span>
+          </a>
+          <p class="text-sm text-muted-foreground">专注磁分离技术水处理设备研发与制造</p>
         </div>
         <div>
-          <h4 class="font-semibold text-white mb-4">快速链接</h4>
-          <ul class="space-y-2 text-sm">
-            <li><a href="index.html" class="hover:text-primary transition-colors">首页</a></li>
-            <li><a href="products.html" class="hover:text-primary transition-colors">产品中心</a></li>
-            <li><a href="about.html" class="hover:text-primary transition-colors">关于我们</a></li>
-            <li><a href="news.html" class="hover:text-primary transition-colors">新闻动态</a></li>
-            <li><a href="contact.html" class="hover:text-primary transition-colors">在线咨询</a></li>
+          <h4 class="font-semibold mb-4">产品中心</h4>
+          <ul class="space-y-2 text-sm text-muted-foreground">
+            <li><a href="products.html" class="hover:text-[#0052FF]">全部产品</a></li>
+            <li><a href="product-magnetic-separator.html" class="hover:text-[#0052FF]">磁分离设备</a></li>
+            <li><a href="product-uv-disinfection.html" class="hover:text-[#0052FF]">UV消毒设备</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="font-semibold text-white mb-4">联系我们</h4>
-          <ul class="space-y-2 text-sm text-slate-400">
-            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-slate-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>山东省临沂市兰山区</li>
-            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-slate-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.4a16 16 0 006.72 6.72l1.76-1.76a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>400-XXX-XXXX</li>
-            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-slate-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>info@sdhengpai.com</li>
+          <h4 class="font-semibold mb-4">关于我们</h4>
+          <ul class="space-y-2 text-sm text-muted-foreground">
+            <li><a href="about.html" class="hover:text-[#0052FF]">公司介绍</a></li>
+            <li><a href="news.html" class="hover:text-[#0052FF]">新闻动态</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">联系我们</h4>
+          <ul class="space-y-2 text-sm text-muted-foreground">
+            <li>电话：400-888-9999</li>
+            <li>邮箱：info@hengpai.cn</li>
+            <li>地址：山东省济南市高新区</li>
           </ul>
         </div>
       </div>
-      <div class="border-t border-slate-700 pt-8 text-center text-sm text-slate-500">&copy; 2025 山东恒派智能科技有限公司 版权所有</div>
+      <div class="pt-8 border-t border-default text-center text-sm text-muted-foreground">
+        <p>&copy; 2026 山东恒派智能科技有限公司. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
   <script>
-    const btn = document.getElementById('theme-toggle');
+    const themeToggle = document.getElementById('theme-toggle');
     const html = document.documentElement;
-    if (localStorage.getItem('theme') === 'light') html.classList.remove('dark');
-    btn.addEventListener('click', () => {
+    if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+    }
+    themeToggle.addEventListener('click', () => {
       html.classList.toggle('dark');
       localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
     });
-    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
-      document.getElementById('mobile-menu').classList.toggle('hidden');
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      navbar.classList.toggle('scrolled', window.scrollY > 10);
     });
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
   </script>
 </body>
 </html>

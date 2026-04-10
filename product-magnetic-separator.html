@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>磁分离设备 - 山东恒派智能科技有限公司</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230052FF' rx='20' width='100' height='100'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='60' fill='white'>H</text></svg>">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0052FF] to-[#4D7CFF] flex items-center justify-center shadow-accent">
+            <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <span class="font-display text-xl">恒派水务</span>
+        </a>
+        <div class="hidden md:flex items-center gap-1">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="products.html" class="nav-link active">产品中心</a>
+          <a href="about.html" class="nav-link">关于我们</a>
+          <a href="news.html" class="nav-link">新闻动态</a>
+          <a href="contact.html" class="nav-link">联系我们</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <button id="theme-toggle" class="w-11 h-11 rounded-xl flex items-center justify-center hover:bg-muted transition-colors" aria-label="切换主题">
+            <svg id="icon-sun" class="w-5 h-5 hidden dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+            <svg id="icon-moon" class="w-5 h-5 block dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </button>
+          <button id="mobile-menu-btn" class="md:hidden w-11 h-11 rounded-xl flex items-center justify-center hover:bg-muted transition-colors">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden border-t border-default bg-background/95 backdrop-blur-xl">
+      <div class="container py-4 space-y-1">
+        <a href="index.html" class="block px-4 py-3 rounded-lg text-sm font-medium hover:bg-muted">首页</a>
+        <a href="products.html" class="block px-4 py-3 rounded-lg text-sm font-medium bg-muted">产品中心</a>
+        <a href="about.html" class="block px-4 py-3 rounded-lg text-sm font-medium hover:bg-muted">关于我们</a>
+        <a href="news.html" class="block px-4 py-3 rounded-lg text-sm font-medium hover:bg-muted">新闻动态</a>
+        <a href="contact.html" class="block px-4 py-3 rounded-lg text-sm font-medium hover:bg-muted">联系我们</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="pt-24 pb-4">
+    <div class="container">
+      <div class="flex items-center gap-2 text-sm text-muted-foreground">
+        <a href="index.html" class="hover:text-[#0052FF]">首页</a>
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        <a href="products.html" class="hover:text-[#0052FF]">产品中心</a>
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        <span class="text-foreground">磁分离设备</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Hero -->
+  <section class="pb-16">
+    <div class="container">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-xl relative" id="hero-carousel">
+            <div class="carousel-track" style="display:flex;transition:transform 0.5s ease;">
+              <img src="images/magnetic-separator-1.jpg" alt="磁分离设备" class="w-full h-full object-cover flex-shrink-0" style="width:100%;">
+              <img src="images/magnetic-separator-2.jpg" alt="磁分离设备" class="w-full h-full object-cover flex-shrink-0" style="width:100%;">
+            </div>
+            <button class="carousel-btn carousel-prev" onclick="moveSlide(-1)" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.5);border:none;border-radius:50%;width:40px;height:40px;cursor:pointer;color:white;display:flex;align-items:center;justify-content:center;z-index:10;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button class="carousel-btn carousel-next" onclick="moveSlide(1)" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.5);border:none;border-radius:50%;width:40px;height:40px;cursor:pointer;color:white;display:flex;align-items:center;justify-content:center;z-index:10;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+            <div class="carousel-dots" style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10;">
+              <span class="dot active" onclick="goToSlide(0)" style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.5);cursor:pointer;"></span>
+              <span class="dot" onclick="goToSlide(1)" style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.5);cursor:pointer;"></span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="section-label mb-4"><span class="dot"></span><span>磁分离系列</span></div>
+          <h1 class="text-4xl md:text-5xl font-display mb-4">磁分离<span class="gradient-text">设备</span></h1>
+          <p class="text-lg text-muted-foreground mb-8 leading-relaxed">
+            采用高性能稀土磁材为核心，实现对工业废水中磁性悬浮物的高效分离。设备处理量大、分离效率高、运行稳定可靠，广泛应用于钢铁冶金、石油化工、矿山机械等行业。
+          </p>
+          <div class="grid grid-cols-3 gap-6 mb-8">
+            <div class="text-center p-4 rounded-xl bg-muted/50">
+              <div class="text-3xl font-display gradient-text">12000</div>
+              <div class="text-sm text-muted-foreground">Gs 磁感应强度</div>
+            </div>
+            <div class="text-center p-4 rounded-xl bg-muted/50">
+              <div class="text-3xl font-display gradient-text">500</div>
+              <div class="text-sm text-muted-foreground">m³/h 最大处理量</div>
+            </div>
+            <div class="text-center p-4 rounded-xl bg-muted/50">
+              <div class="text-3xl font-display gradient-text">99%</div>
+              <div class="text-sm text-muted-foreground">分离效率</div>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-4">
+            <a href="contact.html" class="btn-primary">获取报价 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <a href="products.html" class="btn-secondary">查看其他产品</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Features -->
+  <section class="py-20 lg:py-32 bg-muted/50">
+    <div class="container">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <div class="section-label mb-6"><span class="dot"></span><span>核心特点</span></div>
+        <h2 class="text-3xl md:text-4xl font-display mb-4">技术<span class="gradient-text">优势</span></h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-card rounded-2xl p-6 text-center">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#0052FF] to-[#4D7CFF] flex items-center justify-center mx-auto mb-4">
+            <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-lg mb-2">高性能磁材</h3>
+          <p class="text-sm text-muted-foreground">采用稀土钕铁硼磁材，磁感应强度高达12000Gs</p>
+        </div>
+        <div class="bg-card rounded-2xl p-6 text-center">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#0052FF] to-[#4D7CFF] flex items-center justify-center mx-auto mb-4">
+            <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-lg mb-2">自动反冲洗</h3>
+          <p class="text-sm text-muted-foreground">全自动反冲洗设计，维护简便</p>
+        </div>
+        <div class="bg-card rounded-2xl p-6 text-center">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#0052FF] to-[#4D7CFF] flex items-center justify-center mx-auto mb-4">
+            <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-lg mb-2">智能控制</h3>
+          <p class="text-sm text-muted-foreground">PLC控制系统，支持远程监控</p>
+        </div>
+        <div class="bg-card rounded-2xl p-6 text-center">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#0052FF] to-[#4D7CFF] flex items-center justify-center mx-auto mb-4">
+            <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-lg mb-2">稳定可靠</h3>
+          <p class="text-sm text-muted-foreground">连续运行20000+小时无故障</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specifications -->
+  <section class="py-20 lg:py-32">
+    <div class="container">
+      <div class="grid lg:grid-cols-2 gap-16">
+        <div>
+          <div class="section-label mb-6"><span class="dot"></span><span>技术参数</span></div>
+          <h2 class="text-3xl font-display mb-6">规格<span class="gradient-text">型号</span></h2>
+          <div class="space-y-4">
+            <div class="flex justify-between items-center p-4 rounded-xl bg-muted/30">
+              <span class="font-medium">HP-MC-100</span>
+              <span class="text-muted-foreground">处理量 50m³/h</span>
+            </div>
+            <div class="flex justify-between items-center p-4 rounded-xl bg-muted/30">
+              <span class="font-medium">HP-MC-200</span>
+              <span class="text-muted-foreground">处理量 100m³/h</span>
+            </div>
+            <div class="flex justify-between items-center p-4 rounded-xl bg-muted/30">
+              <span class="font-medium">HP-MC-300</span>
+              <span class="text-muted-foreground">处理量 200m³/h</span>
+            </div>
+            <div class="flex justify-between items-center p-4 rounded-xl bg-muted/30">
+              <span class="font-medium">HP-MC-500</span>
+              <span class="text-muted-foreground">处理量 500m³/h</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="section-label mb-6"><span class="dot"></span><span>典型参数</span></div>
+          <h2 class="text-3xl font-display mb-6">技术<span class="gradient-text">规格</span></h2>
+          <table class="w-full">
+            <tbody class="divide-y divide-default">
+              <tr><td class="py-3 text-muted-foreground">磁感应强度</td><td class="py-3 text-right font-medium">12000 Gs</td></tr>
+              <tr><td class="py-3 text-muted-foreground">工作温度</td><td class="py-3 text-right font-medium">-20℃ ~ 80℃</td></tr>
+              <tr><td class="py-3 text-muted-foreground">进水悬浮物</td><td class="py-3 text-right font-medium">≤ 1000 mg/L</td></tr>
+              <tr><td class="py-3 text-muted-foreground">出水悬浮物</td><td class="py-3 text-right font-medium">≤ 10 mg/L</td></tr>
+              <tr><td class="py-3 text-muted-foreground">功率</td><td class="py-3 text-right font-medium">2.2 ~ 7.5 kW</td></tr>
+              <tr><td class="py-3 text-muted-foreground">电源</td><td class="py-3 text-right font-medium">380V / 50Hz</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Applications -->
+  <section class="py-20 lg:py-32 section-inverted relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid-pattern" style="color: rgba(255,255,255,0.5);"></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#0052FF]/20 rounded-full blur-[120px]"></div>
+    <div class="container relative">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <div class="section-label mb-6" style="border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.1);"><span class="dot"></span><span style="color: white;">应用领域</span></div>
+        <h2 class="text-3xl md:text-4xl font-display mb-4 text-white">适用<span class="gradient-text">场景</span></h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 text-center">
+          <h3 class="font-display text-xl mb-2 text-white">钢铁冶金</h3>
+          <p class="text-sm" style="color: rgba(255,255,255,0.7);">轧钢废水、炼钢连铸废水、烧结废水</p>
+        </div>
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 text-center">
+          <h3 class="font-display text-xl mb-2 text-white">石油化工</h3>
+          <p class="text-sm" style="color: rgba(255,255,255,0.7);">炼油废水、化工工艺废水、催化剂回收</p>
+        </div>
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 text-center">
+          <h3 class="font-display text-xl mb-2 text-white">矿山机械</h3>
+          <p class="text-sm" style="color: rgba(255,255,255,0.7);">铁矿、铜矿、金矿等选矿废水</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 lg:py-32">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-display mb-6">需要了解<span class="gradient-text">更多</span>？</h2>
+        <p class="text-lg text-muted-foreground mb-8">我们的技术团队可为您提供设备选型咨询和技术方案设计</p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="contact.html" class="btn-primary">立即咨询 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="products.html" class="btn-secondary">查看全部产品</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t border-default bg-muted/30">
+    <div class="container">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <a href="index.html" class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0052FF] to-[#4D7CFF] flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg>
+            </div>
+            <span class="font-display text-xl">恒派水务</span>
+          </a>
+          <p class="text-sm text-muted-foreground">专注磁分离技术水处理设备研发与制造</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">产品中心</h4>
+          <ul class="space-y-2 text-sm text-muted-foreground">
+            <li><a href="product-magnetic-separator.html" class="hover:text-[#0052FF]">磁分离设备</a></li>
+            <li><a href="product-reactor-agitator.html" class="hover:text-[#0052FF]">反应搅拌器</a></li>
+            <li><a href="product-uv-disinfection.html" class="hover:text-[#0052FF]">UV消毒设备</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">关于我们</h4>
+          <ul class="space-y-2 text-sm text-muted-foreground">
+            <li><a href="about.html" class="hover:text-[#0052FF]">公司介绍</a></li>
+            <li><a href="news.html" class="hover:text-[#0052FF]">新闻动态</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">联系我们</h4>
+          <ul class="space-y-2 text-sm text-muted-foreground">
+            <li>电话：400-888-9999</li>
+            <li>邮箱：info@hengpai.cn</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-8 border-t border-default text-center text-sm text-muted-foreground">
+        <p>&copy; 2026 山东恒派智能科技有限公司. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+    if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+    }
+    themeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    });
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      navbar.classList.toggle('scrolled', window.scrollY > 10);
+    });
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    // Carousel
+    let currentSlide = 0;
+    const track = document.querySelector('.carousel-track');
+    const dots = document.querySelectorAll('.carousel-dots .dot');
+    const totalSlides = 2;
+    function updateCarousel() {
+      track.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
+      dots.forEach((d,i)=>d.style.background=i===currentSlide?'white':'rgba(255,255,255,0.5)');
+    }
+    function moveSlide(n) { currentSlide = (currentSlide + n + totalSlides) % totalSlides; updateCarousel(); }
+    function goToSlide(n) { currentSlide = n; updateCarousel(); }
+    setInterval(() => moveSlide(1), 3000);
+  </script>
+</body>
+</html>

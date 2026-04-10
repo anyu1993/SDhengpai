@@ -4,345 +4,427 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>产品中心 - 山东恒派智能科技有限公司</title>
-  <meta name="description" content="恒派智能科技产品中心：磁絮凝分离设备、高密度沉淀池、精密过滤器、零排放膜工艺、UV紫外线消毒、反硝化深床滤池">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: { inter: ['Inter', 'sans-serif'] },
-          colors: {
-            brand: { 50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8' }
-          }
-        }
-      }
-    }
-  </script>
-  <style>
-    * { font-family: 'Inter', sans-serif; }
-    :root {
-      --bg-page: #ffffff;
-      --text-page: #1E293B;
-      --bg-card: #ffffff;
-      --border-card: #e5e7eb;
-      --bg-nav: rgba(255,255,255,0.85);
-    }
-    html.dark {
-      --bg-page: #0F172A;
-      --text-page: #F1F5F9;
-      --bg-card: #1E293B;
-      --border-card: #334155;
-      --bg-nav: rgba(15,23,42,0.85);
-    }
-    body { background: var(--bg-page); color: var(--text-page); transition: background 0.3s, color 0.3s; }
-    .card { background: var(--bg-card); border-color: var(--border-card); transition: background 0.3s, border-color 0.3s; }
-    nav { background: var(--bg-nav); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-color: var(--border-card); transition: background 0.3s; }
-    footer { background: var(--bg-card); border-color: var(--border-card); transition: background 0.3s, border-color 0.3s; }
-  </style>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230052FF' rx='20' width='100' height='100'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='60' fill='white'>H</text></svg>">
 </head>
-<body class="min-h-screen flex flex-col">
-
-  <nav class="fixed top-0 left-0 right-0 z-50 border-b">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16">
-        <div class="flex items-center gap-2">
-          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="white"><path d="M8 1l6 3.5v7L8 15l-6-3.5v-7L8 1z"/></svg>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0052FF] to-[#4D7CFF] flex items-center justify-center shadow-accent">
+            <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
           </div>
-          <span class="font-bold text-lg" style="color: var(--text-page)">恒派智能科技</span>
+          <span class="font-display text-xl">恒派水务</span>
+        </a>
+        <div class="hidden md:flex items-center gap-1">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="products.html" class="nav-link active">产品中心</a>
+          <a href="about.html" class="nav-link">关于我们</a>
+          <a href="news.html" class="nav-link">新闻动态</a>
+          <a href="contact.html" class="nav-link">联系我们</a>
         </div>
-        <div class="hidden md:flex items-center gap-8">
-          <a href="index.html" class="text-sm font-medium hover:text-blue-600 transition-colors" style="color: var(--text-page); opacity:0.7">首页</a>
-          <a href="products.html" class="text-sm font-medium hover:text-blue-600 transition-colors" style="color:#2563EB">产品中心</a>
-          <a href="about.html" class="text-sm font-medium hover:text-blue-600 transition-colors" style="color: var(--text-page); opacity:0.7">关于我们</a>
-          <a href="news.html" class="text-sm font-medium hover:text-blue-600 transition-colors" style="color: var(--text-page); opacity:0.7">新闻动态</a>
-          <a href="contact.html" class="text-sm font-medium hover:text-blue-600 transition-colors" style="color: var(--text-page); opacity:0.7">在线咨询</a>
+        <div class="flex items-center gap-3">
+          <button id="theme-toggle" class="w-11 h-11 rounded-xl flex items-center justify-center hover:bg-muted transition-colors" aria-label="切换主题">
+            <svg id="icon-sun" class="w-5 h-5 hidden dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+            <svg id="icon-moon" class="w-5 h-5 block dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </button>
+          <button id="mobile-menu-btn" class="md:hidden w-11 h-11 rounded-xl flex items-center justify-center hover:bg-muted transition-colors">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+          </button>
         </div>
-        <button id="themeToggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-          <svg id="sunIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-          <svg id="moonIcon" class="hidden" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden border-t border-default bg-background/95 backdrop-blur-xl">
+      <div class="container py-4 space-y-1">
+        <a href="index.html" class="block px-4 py-3 rounded-lg text-sm font-medium hover:bg-muted">首页</a>
+        <a href="products.html" class="block px-4 py-3 rounded-lg text-sm font-medium bg-muted">产品中心</a>
+        <a href="about.html" class="block px-4 py-3 rounded-lg text-sm font-medium hover:bg-muted">关于我们</a>
+        <a href="news.html" class="block px-4 py-3 rounded-lg text-sm font-medium hover:bg-muted">新闻动态</a>
+        <a href="contact.html" class="block px-4 py-3 rounded-lg text-sm font-medium hover:bg-muted">联系我们</a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section class="pt-24 pb-16 px-4" style="background:linear-gradient(135deg,#eff6ff,#dbeafe)">
-    <div class="max-w-4xl mx-auto text-center">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4" style="color:#1E293B">产品中心</h1>
-      <p class="text-lg" style="color:#475569">六大核心产品，覆盖水处理全场景需求</p>
+  <!-- Page Hero -->
+  <section class="pt-28 pb-16 relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-0 right-0 w-[500px] h-[400px] bg-gradient-to-br from-[#0052FF]/10 to-[#4D7CFF]/5 rounded-full blur-[100px]"></div>
+    </div>
+    <div class="container relative">
+      <div class="max-w-2xl">
+        <div class="section-label mb-6"><span class="dot"></span><span>产品中心</span></div>
+        <h1 class="text-4xl md:text-5xl font-display mb-4">六大核心<span class="gradient-text">产品线</span></h1>
+        <p class="text-lg text-muted-foreground">覆盖工业废水处理全场景，提供从单机设备到整站解决方案</p>
+      </div>
     </div>
   </section>
 
-  <!-- Product 1: 磁絮凝分离设备 -->
-  <section class="py-16 px-4">
-    <div class="max-w-5xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <div class="card rounded-2xl border p-8">
-            <img src="mixer.jpg" alt="磁絮凝分离设备" class="w-full aspect-video rounded-xl object-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-            <div class="w-full aspect-video rounded-xl items-center justify-center hidden" style="background:linear-gradient(135deg,#dbeafe,#93c5fd)">
-              <svg width="100" height="80" viewBox="0 0 100 80" fill="none"><rect x="10" y="10" width="80" height="60" rx="6" stroke="#2563EB" stroke-width="2" fill="#eff6ff"/><circle cx="30" cy="35" r="8" fill="#2563EB" opacity="0.7"/><circle cx="50" cy="40" r="10" fill="#1d4ed8" opacity="0.8"/><circle cx="70" cy="32" r="7" fill="#2563EB" opacity="0.6"/></svg>
-            </div>
-            <div class="grid grid-cols-2 gap-4 mt-4">
-              <div class="rounded-lg p-3" style="background:var(--bg-page)">
-                <p class="text-xs font-medium mb-1" style="color:var(--text-page);opacity:0.5">处理量</p>
-                <p class="text-sm font-bold" style="color:var(--text-page)">50-500 m³/h</p>
+  <!-- Products Grid -->
+  <section class="pb-20 lg:pb-32">
+    <div class="container">
+      <div class="space-y-24">
+        <!-- Product 1: Magnetic Separator -->
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="order-2 lg:order-1">
+            <div class="section-label mb-4"><span class="dot"></span><span>磁分离系列</span></div>
+            <h2 class="text-3xl md:text-4xl font-display mb-4">磁分离<span class="gradient-text">设备</span></h2>
+            <p class="text-muted-foreground mb-6 leading-relaxed">
+              采用高性能稀土磁材为核心，实现对工业废水中磁性悬浮物的高效分离。设备处理量大、分离效率高、运行稳定可靠，广泛应用于钢铁冶金、石油化工、矿山机械等行业。
+            </p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <span>磁感应强度高达12000Gs</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <span>处理量50-500m³/h可选</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <span>全自动反冲洗设计</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <span>PLC智能控制系统</span>
+              </li>
+            </ul>
+            <a href="contact.html" class="btn-primary">获取报价 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+          <div class="order-1 lg:order-2">
+            <div class="relative">
+              <div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-xl">
+                <img src="images/magnetic-separator-1.jpg" alt="磁分离设备" class="w-full h-full object-cover">
               </div>
-              <div class="rounded-lg p-3" style="background:var(--bg-page)">
-                <p class="text-xs font-medium mb-1" style="color:var(--text-page);opacity:0.5">分离精度</p>
-                <p class="text-sm font-bold" style="color:var(--text-page)">0.1-1 μm</p>
-              </div>
-              <div class="rounded-lg p-3" style="background:var(--bg-page)">
-                <p class="text-xs font-medium mb-1" style="color:var(--text-page);opacity:0.5">磁种回收率</p>
-                <p class="text-sm font-bold" style="color:var(--text-page)">≥99%</p>
-              </div>
-              <div class="rounded-lg p-3" style="background:var(--bg-page)">
-                <p class="text-xs font-medium mb-1" style="color:var(--text-page);opacity:0.5">功耗</p>
-                <p class="text-sm font-bold" style="color:var(--text-page)">0.5 kW/m³</p>
+              <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-[#0052FF] to-[#4D7CFF] rounded-2xl flex items-center justify-center shadow-accent-lg">
+                <div class="text-white text-center">
+                  <div class="text-3xl font-display">12000</div>
+                  <div class="text-xs">Gs</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div>
-          <span class="inline-block text-xs font-bold tracking-widest uppercase mb-3 px-3 py-1 rounded-full border" style="color:#2563EB;border-color:#bfdbfe;background:#eff6ff">水处理核心设备</span>
-          <h2 class="text-3xl font-bold mb-4" style="color:var(--text-page)">磁絮凝分离设备</h2>
-          <p class="mb-4 leading-relaxed" style="color:var(--text-page);opacity:0.7">采用超磁分离技术，通过投加磁种使悬浮物形成磁性絮团，经超磁分离设备快速打捞，实现高效固液分离。广泛应用于河道湖泊治理、工业废水处理及市政污水处理提标改造。</p>
-          <ul class="space-y-2 mb-6">
-            <li class="flex items-center gap-2 text-sm" style="color:var(--text-page);opacity:0.8">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#2563eb"/><path d="M5 8l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              分离速度快，处理效率高
-            </li>
-            <li class="flex items-center gap-2 text-sm" style="color:var(--text-page);opacity:0.8">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#2563eb"/><path d="M5 8l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              磁种循环利用，运行成本低
-            </li>
-            <li class="flex items-center gap-2 text-sm" style="color:var(--text-page);opacity:0.8">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#2563eb"/><path d="M5 8l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              模块化设计，布置灵活
-            </li>
-          </ul>
-          <a href="contact.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-all hover:shadow-lg hover:-translate-y-0.5" style="background:#2563EB">
-            获取方案
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
+
+        <!-- Product 2: Reactor Agitator -->
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="relative">
+              <div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-xl">
+                <img src="images/reactor-agitator-1.jpg" alt="反应搅拌器" class="w-full h-full object-cover">
+              </div>
+              <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-[#0052FF] to-[#4D7CFF] rounded-2xl flex items-center justify-center shadow-accent-lg">
+                <div class="text-white text-center">
+                  <div class="text-3xl font-display">99%</div>
+                  <div class="text-xs">混合效率</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="section-label mb-4"><span class="dot"></span><span>混合反应系列</span></div>
+            <h2 class="text-3xl md:text-4xl font-display mb-4">反应<span class="gradient-text">搅拌器</span></h2>
+            <p class="text-muted-foreground mb-6 leading-relaxed">
+              针对水处理化学反应的专用搅拌设备，通过优化叶轮结构和转速控制，实现药剂与水体的高效混合。设备采用防腐材料制造，适用于各种酸碱药剂环境。
+            </p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <span>变频调速电机</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <span>304/316L不锈钢材质</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <span>框式/桨式/推进式叶轮</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <span>机械密封防泄漏</span>
+              </li>
+            </ul>
+            <a href="contact.html" class="btn-primary">获取报价 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+
+        <!-- Product 3: UV Disinfection -->
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="order-2 lg:order-1">
+            <div class="section-label mb-4"><span class="dot"></span><span>消毒系列</span></div>
+            <h2 class="text-3xl md:text-4xl font-display mb-4">明渠式紫外线消毒器</h2>
+            <p class="text-muted-foreground mb-6 leading-relaxed">
+              采用254nm紫外线杀菌技术，有效灭活水中细菌、病毒等微生物。设备操作简单、无二次污染、消毒效果稳定，已通过欧盟CE认证。
+            </p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <span>杀菌率99.9%以上</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <span>低压高纯度石英灯管</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <span>UV强度在线监测</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <span>CE认证出口品质</span>
+              </li>
+            </ul>
+            <a href="contact.html" class="btn-primary">获取报价 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+          <div class="order-1 lg:order-2">
+            <div class="relative">
+              <div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-xl">
+                <img src="images/uv-disinfection-1.jpg" alt="明渠式紫外线消毒器" class="w-full h-full object-cover">
+              </div>
+              <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-[#0052FF] to-[#4D7CFF] rounded-2xl flex items-center justify-center shadow-accent-lg">
+                <div class="text-white text-center">
+                  <div class="text-3xl font-display">99.9%</div>
+                  <div class="text-xs">杀菌率</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4: High Precision Filter -->
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="relative">
+              <div class="aspect-[4/3] rounded-3xl overflow-hidden shadow-xl">
+                <img src="images/high-precision-filter-1.jpg" alt="转鼓式精密过滤器" class="w-full h-full object-cover">
+              </div>
+              <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-[#0052FF] to-[#4D7CFF] rounded-2xl flex items-center justify-center shadow-accent-lg">
+                <div class="text-white text-center">
+                  <div class="text-3xl font-display">5μm</div>
+                  <div class="text-xs">过滤精度</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="section-label mb-4"><span class="dot"></span><span>过滤系列</span></div>
+            <h2 class="text-3xl md:text-4xl font-display mb-4">转鼓式精密<span class="gradient-text">过滤器</span></h2>
+            <p class="text-muted-foreground mb-6 leading-relaxed">
+              多级过滤系统组合，可去除水中悬浮物、胶体物质等，确保出水水质稳定达到排放标准或回用要求。设备结构紧凑、反洗再生方便、使用寿命长。
+            </p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <span>过滤精度1-100μm可选</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <span>全自动反洗控制</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <span>PP/不锈钢滤材</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <span>压差实时监测</span>
+              </li>
+            </ul>
+            <a href="contact.html" class="btn-primary">获取报价 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+
+        <!-- Product 5: Sludge Scraper (Placeholder) -->
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="order-2 lg:order-1">
+            <div class="section-label mb-4"><span class="dot"></span><span>污泥处理系列</span></div>
+            <h2 class="text-3xl md:text-4xl font-display mb-4"><span class="gradient-text">刮泥机</span></h2>
+            <p class="text-muted-foreground mb-6 leading-relaxed">
+              用于刮集沉淀池底部的污泥，实现污泥的连续排出。设备采用回转驱动，运行平稳可靠，大幅减少人工清理工作量。
+            </p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <span>中心传动/周边传动</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <span>防腐耐磨刮板</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <span>无级调速电机</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <span>适用于各种沉淀池</span>
+              </li>
+            </ul>
+            <a href="contact.html" class="btn-primary">获取报价 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+          <div class="order-1 lg:order-2">
+            <div class="relative">
+              <div class="aspect-[4/3] rounded-3xl bg-gradient-to-br from-[#0052FF]/10 to-[#4D7CFF]/5 flex items-center justify-center">
+                <div class="w-40 h-40 rounded-3xl bg-gradient-to-br from-[#0052FF] to-[#4D7CFF] flex items-center justify-center">
+                  <svg class="w-20 h-20 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <line x1="3" y1="9" x2="21" y2="9"/>
+                    <line x1="3" y1="15" x2="21" y2="15"/>
+                    <line x1="9" y1="3" x2="9" y2="21"/>
+                    <line x1="15" y1="3" x2="15" y2="21"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-[#0052FF] to-[#4D7CFF] rounded-2xl flex items-center justify-center shadow-accent-lg">
+                <div class="text-white text-center">
+                  <div class="text-3xl font-display">24h</div>
+                  <div class="text-xs">连续运行</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 6: Dosing System (Placeholder) -->
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="relative">
+              <div class="aspect-[4/3] rounded-3xl bg-gradient-to-br from-[#0052FF]/10 to-[#4D7CFF]/5 flex items-center justify-center">
+                <div class="w-40 h-40 rounded-3xl bg-gradient-to-br from-[#0052FF] to-[#4D7CFF] flex items-center justify-center">
+                  <svg class="w-20 h-20 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-[#0052FF] to-[#4D7CFF] rounded-2xl flex items-center justify-center shadow-accent-lg">
+                <div class="text-white text-center">
+                  <div class="text-3xl font-display">±1%</div>
+                  <div class="text-xs">计量精度</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="section-label mb-4"><span class="dot"></span><span>药剂投加系列</span></div>
+            <h2 class="text-3xl md:text-4xl font-display mb-4">非金属高速<span class="gradient-text">剪切机</span></h2>
+            <p class="text-muted-foreground mb-6 leading-relaxed">
+              精确计量和投加水处理药剂，实现处理过程的自动化控制。设备采用高精度计量泵，可根据水质变化自动调节投加量。
+            </p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <span>高精度隔膜计量泵</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <span>PLC比例调节</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <span>液位监测与报警</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0"><svg class="w-4 h-4 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+                <span>多种药剂兼容</span>
+              </li>
+            </ul>
+            <a href="contact.html" class="btn-primary">获取报价 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Product 2: 高密度沉淀池 -->
-  <section class="py-16 px-4" style="background:var(--bg-card)">
-    <div class="max-w-5xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div class="md:order-2">
-          <span class="inline-block text-xs font-bold tracking-widest uppercase mb-3 px-3 py-1 rounded-full border" style="color:#7c3aed;border-color:#ddd6fe;background:#f5f3ff">沉淀分离技术</span>
-          <h2 class="text-3xl font-bold mb-4" style="color:var(--text-page)">高密度沉淀池</h2>
-          <p class="mb-4 leading-relaxed" style="color:var(--text-page);opacity:0.7">集成絮凝、沉淀、浓缩于一体，采用斜板沉淀与污泥回流技术，大幅提高沉淀效率。出水浊度低、抗冲击负荷能力强，适用于饮用水处理及污水深度处理。</p>
-          <ul class="space-y-2 mb-6">
-            <li class="flex items-center gap-2 text-sm" style="color:var(--text-page);opacity:0.8">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#7c3aed"/><path d="M5 8l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              表面负荷高，占地面积小
-            </li>
-            <li class="flex items-center gap-2 text-sm" style="color:var(--text-page);opacity:0.8">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#7c3aed"/><path d="M5 8l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              出水浊度低于 3 NTU
-            </li>
-            <li class="flex items-center gap-2 text-sm" style="color:var(--text-page);opacity:0.8">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#7c3aed"/><path d="M5 8l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              全自动控制，运维简便
-            </li>
-          </ul>
-          <a href="contact.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-all hover:shadow-lg hover:-translate-y-0.5" style="background:#7c3aed">
-            获取方案
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-        <div class="md:order-1">
-          <div class="card rounded-2xl border p-8">
-            <div class="w-full aspect-video rounded-xl flex items-center justify-center mb-6" style="background:linear-gradient(135deg,#ede9fe,#c4b5fd)">
-              <svg width="100" height="80" viewBox="0 0 100 80" fill="none"><rect x="10" y="15" width="80" height="50" rx="4" stroke="#7c3aed" stroke-width="2" fill="#f5f3ff"/><path d="M10 30h80M10 45h80M10 60h80" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="4 2"/></svg>
-            </div>
-            <div class="grid grid-cols-2 gap-4">
-              <div class="rounded-lg p-3" style="background:var(--bg-page)">
-                <p class="text-xs font-medium mb-1" style="color:var(--text-page);opacity:0.5">表面负荷</p>
-                <p class="text-sm font-bold" style="color:var(--text-page)">15-30 m³/m²·h</p>
-              </div>
-              <div class="rounded-lg p-3" style="background:var(--bg-page)">
-                <p class="text-xs font-medium mb-1" style="color:var(--text-page);opacity:0.5">出水浊度</p>
-                <p class="text-sm font-bold" style="color:var(--text-page)">< 3 NTU</p>
-              </div>
-            </div>
-          </div>
+  <!-- CTA Section -->
+  <section class="py-20 lg:py-32 bg-muted/50">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-display mb-6">需要定制<span class="gradient-text">解决方案</span>？</h2>
+        <p class="text-lg text-muted-foreground mb-8">我们的技术团队可根据您的具体工况，提供设备选型和方案设计服务</p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="contact.html" class="btn-primary">立即咨询 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="about.html" class="btn-secondary">了解更多</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Product 3: 精密过滤器 -->
-  <section class="py-16 px-4">
-    <div class="max-w-5xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
+  <!-- Footer -->
+  <footer class="py-12 border-t border-default bg-muted/30">
+    <div class="container">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
         <div>
-          <span class="inline-block text-xs font-bold tracking-widest uppercase mb-3 px-3 py-1 rounded-full border" style="color:#059669;border-color:#a7f3d0;background:#ecfdf5">精密过滤技术</span>
-          <h2 class="text-3xl font-bold mb-4" style="color:var(--text-page)">精密过滤器</h2>
-          <p class="mb-4 leading-relaxed" style="color:var(--text-page);opacity:0.7">采用多级精密过滤介质，有效去除水中悬浮物、胶体物质及部分溶解性污染物。过滤精度可按需调节，适用于各类水处理工艺的深度处理环节。</p>
-          <ul class="space-y-2 mb-6">
-            <li class="flex items-center gap-2 text-sm" style="color:var(--text-page);opacity:0.8">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#059669"/><path d="M5 8l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              多级过滤，精度可调
-            </li>
-            <li class="flex items-center gap-2 text-sm" style="color:var(--text-page);opacity:0.8">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#059669"/><path d="M5 8l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              反洗自动化，寿命长
-            </li>
-            <li class="flex items-center gap-2 text-sm" style="color:var(--text-page);opacity:0.8">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#059669"/><path d="M5 8l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              运行稳定，维护简便
-            </li>
-          </ul>
-          <a href="contact.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-all hover:shadow-lg hover:-translate-y-0.5" style="background:#059669">
-            获取方案
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <a href="index.html" class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0052FF] to-[#4D7CFF] flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg>
+            </div>
+            <span class="font-display text-xl">恒派水务</span>
           </a>
+          <p class="text-sm text-muted-foreground">专注磁分离技术水处理设备研发与制造</p>
         </div>
         <div>
-          <div class="card rounded-2xl border p-8">
-            <div class="w-full aspect-video rounded-xl flex items-center justify-center mb-6" style="background:linear-gradient(135deg,#d1fae5,#6ee7b7)">
-              <svg width="100" height="80" viewBox="0 0 100 80" fill="none"><rect x="15" y="10" width="70" height="60" rx="4" stroke="#059669" stroke-width="2" fill="#ecfdf5"/><path d="M15 25h70M15 40h70M15 55h70" stroke="#059669" stroke-width="1.5"/><rect x="42" y="5" width="16" height="10" rx="2" fill="#059669"/></svg>
-            </div>
-            <div class="grid grid-cols-2 gap-4">
-              <div class="rounded-lg p-3" style="background:var(--bg-page)">
-                <p class="text-xs font-medium mb-1" style="color:var(--text-page);opacity:0.5">过滤精度</p>
-                <p class="text-sm font-bold" style="color:var(--text-page)">1-100 μm</p>
-              </div>
-              <div class="rounded-lg p-3" style="background:var(--bg-page)">
-                <p class="text-xs font-medium mb-1" style="color:var(--text-page);opacity:0.5">工作压力</p>
-                <p class="text-sm font-bold" style="color:var(--text-page)">0.2-0.6 MPa</p>
-              </div>
-            </div>
-          </div>
+          <h4 class="font-semibold mb-4">产品中心</h4>
+          <ul class="space-y-2 text-sm text-muted-foreground">
+            <li><a href="product-magnetic-separator.html" class="hover:text-[#0052FF]">磁分离设备</a></li>
+            <li><a href="product-reactor-agitator.html" class="hover:text-[#0052FF]">反应搅拌器</a></li>
+            <li><a href="product-uv-disinfection.html" class="hover:text-[#0052FF]">明渠式紫外线消毒器</a></li>
+            <li><a href="product-high-precision-filter.html" class="hover:text-[#0052FF]">转鼓式精密过滤器</a></li>
+            <li><a href="product-dosing-system.html" class="hover:text-[#0052FF]">非金属高速剪切机</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">关于我们</h4>
+          <ul class="space-y-2 text-sm text-muted-foreground">
+            <li><a href="about.html" class="hover:text-[#0052FF]">公司介绍</a></li>
+            <li><a href="news.html" class="hover:text-[#0052FF]">新闻动态</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">联系我们</h4>
+          <ul class="space-y-2 text-sm text-muted-foreground">
+            <li>电话：400-888-9999</li>
+            <li>邮箱：info@hengpai.cn</li>
+            <li>地址：山东省济南市高新区</li>
+          </ul>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Product 4: 零排放膜工艺 -->
-  <section class="py-16 px-4" style="background:var(--bg-card)">
-    <div class="max-w-5xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div class="md:order-2">
-          <span class="inline-block text-xs font-bold tracking-widest uppercase mb-3 px-3 py-1 rounded-full border" style="color:#0891b2;border-color:#a5f3fc;background:#ecfeff">膜分离技术</span>
-          <h2 class="text-3xl font-bold mb-4" style="color:var(--text-page)">零排放膜工艺</h2>
-          <p class="mb-4 leading-relaxed" style="color:var(--text-page);opacity:0.7">采用"预处理+膜分离+蒸发结晶"的组合工艺路线，实现废水零排放。膜系统包括超滤、纳滤、反渗透等多种膜组件，根据水质定制最优方案。</p>
-          <ul class="space-y-2 mb-6">
-            <li class="flex items-center gap-2 text-sm" style="color:var(--text-page);opacity:0.8">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#0891b2"/><path d="M5 8l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              真正实现废水零排放
-            </li>
-            <li class="flex items-center gap-2 text-sm" style="color:var(--text-page);opacity:0.8">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#0891b2"/><path d="M5 8l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              水资源回收利用率高
-            </li>
-            <li class="flex items-center gap-2 text-sm" style="color:var(--text-page);opacity:0.8">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#0891b2"/><path d="M5 8l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              自动化程度高，可远程监控
-            </li>
-          </ul>
-          <a href="contact.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-all hover:shadow-lg hover:-translate-y-0.5" style="background:#0891b2">
-            获取方案
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-        <div class="md:order-1">
-          <div class="card rounded-2xl border p-8">
-            <div class="w-full aspect-video rounded-xl flex items-center justify-center mb-6" style="background:linear-gradient(135deg,#cffafe,#67e8f9)">
-              <svg width="100" height="80" viewBox="0 0 100 80" fill="none"><circle cx="50" cy="40" r="30" stroke="#0891b2" stroke-width="2" fill="#ecfeff"/><path d="M35 40h30M50 25v30" stroke="#0891b2" stroke-width="2"/><circle cx="50" cy="40" r="12" stroke="#0891b2" stroke-width="2" fill="none"/></svg>
-            </div>
-            <div class="grid grid-cols-2 gap-4">
-              <div class="rounded-lg p-3" style="background:var(--bg-page)">
-                <p class="text-xs font-medium mb-1" style="color:var(--text-page);opacity:0.5">回收率</p>
-                <p class="text-sm font-bold" style="color:var(--text-page)">≥85%</p>
-              </div>
-              <div class="rounded-lg p-3" style="background:var(--bg-page)">
-                <p class="text-xs font-medium mb-1" style="color:var(--text-page);opacity:0.5">产水水质</p>
-                <p class="text-sm font-bold" style="color:var(--text-page)">优于回用标准</p>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="pt-8 border-t border-default text-center text-sm text-muted-foreground">
+        <p>&copy; 2026 山东恒派智能科技有限公司. All rights reserved.</p>
       </div>
     </div>
-  </section>
+  </footer>
 
-  <!-- Product 5: UV紫外线消毒 -->
-  <section class="py-16 px-4">
-    <div class="max-w-5xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <span class="inline-block text-xs font-bold tracking-widest uppercase mb-3 px-3 py-1 rounded-full border" style="color:#d97706;border-color:#fde68a;background:#fffbeb">物理消毒</span>
-          <h2 class="text-3xl font-bold mb-4" style="color:var(--text-page)">UV紫外线消毒</h2>
-          <p class="mb-4 leading-relaxed" style="color:var(--text-page);opacity:0.7">利用UVC紫外线的DNA破坏作用，对水体中的细菌、病毒、原生动物等微生物进行高效灭活。不添加化学药剂，无二次污染，杀菌速度快、效率高。</p>
-          <ul class="space-y-2 mb-6">
-            <li class="flex items-center gap-2 text-sm" style="color:var(--text-page);opacity:0.8">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#d97706"/><path d="M5 8l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              杀菌效率高达99.9%
-            </li>
-            <li class="flex items-center gap-2 text-sm" style="color:var(--text-page);opacity:0.8">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#d97706"/><path d="M5 8l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              无化学残留，安全环保
-            </li>
-            <li class="flex items-center gap-2 text-sm" style="color:var(--text-page);opacity:0.8">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#d97706"/><path d="M5 8l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              设备紧凑，安装方便
-            </li>
-          </ul>
-          <a href="contact.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-all hover:shadow-lg hover:-translate-y-0.5" style="background:#d97706">
-            获取方案
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-        <div>
-          <div class="card rounded-2xl border p-8">
-            <div class="w-full aspect-video rounded-xl flex items-center justify-center mb-6" style="background:linear-gradient(135deg,#fef3c7,#fcd34d)">
-              <svg width="100" height="80" viewBox="0 0 100 80" fill="none"><rect x="15" y="20" width="70" height="40" rx="4" stroke="#d97706" stroke-width="2" fill="#fffbeb"/><circle cx="35" cy="40" r="10" stroke="#d97706" stroke-width="2" fill="none"/><circle cx="65" cy="40" r="10" stroke="#d97706" stroke-width="2" fill="none"/><path d="M45 40h10" stroke="#d97706" stroke-width="2"/></svg>
-            </div>
-            <div class="grid grid-cols-2 gap-4">
-              <div class="rounded-lg p-3" style="background:var(--bg-page)">
-                <p class="text-xs font-medium mb-1" style="color:var(--text-page);opacity:0.5">杀菌率</p>
-                <p class="text-sm font-bold" style="color:var(--text-page)">≥99.9%</p>
-              </div>
-              <div class="rounded-lg p-3" style="background:var(--bg-page)">
-                <p class="text-xs font-medium mb-1" style="color:var(--text-page);opacity:0.5">灯管寿命</p>
-                <p class="text-sm font-bold" style="color:var(--text-page)">9000+ 小时</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Product 6: 反硝化深床滤池 -->
-  <section class="py-16 px-4" style="background:var(--bg-card)">
-    <div class="max-w-5xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div class="md:order-2">
-          <span class="inline-block text-xs font-bold tracking-widest uppercase mb-3 px-3 py-1 rounded-full border" style="color:#db2777;border-color:#fbcfe8;background:#fdf2f8">深度脱氮</span>
-          <h2 class="text-3xl font-bold mb-4" style="color:var(--text-page)">反硝化深床滤池</h2>
-          <p class="mb-4 leading-relaxed" style="color:var(--text-page);opacity:0.7">以石英砂为滤料的反硝化滤池，在缺氧环境下利用反硝化细菌将硝酸盐氮还原为氮气，实现深度脱氮。同时具备截留悬浮物的功能，出水水质稳定达标。</p>
-          <ul class="space-y-2 mb-6">
-            <li class="flex items-center gap-2 text-sm" style="color:var(--text-page);opacity:0.8">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#db2777"/><path d="M5 8l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              脱氮效率高，稳定可靠
-            </li>
-            <li class="flex items-center gap-2 text-sm" style="color:var(--text-page);opacity:0.8">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#db2777"/><path d="M5 8l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              一池多用，同时除SS
-            </li>
-            <li class="flex items-center gap-2 text-sm" style="color:var(--text-page);opacity:0.8">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#db2777"/><path d="M5 8l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              反洗可调节，
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+    if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+    }
+    themeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    });
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      navbar.classList.toggle('scrolled', window.scrollY > 10);
+    });
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+  </script>
+</body>
+</html>

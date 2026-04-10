@@ -4,157 +4,282 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>新闻动态 - 山东恒派智能科技有限公司</title>
-  <meta name="description" content="恒派智能科技最新资讯、工程案例、行业动态与技术进展">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: { inter: ['Inter', 'sans-serif'] },
-          colors: {
-            brand: { 50:'#eff6ff',100:'#dbeafe',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8' }
-          }
-        }
-      }
-    }
-  </script>
-  <style>
-    * { font-family: 'Inter', sans-serif; }
-    :root {
-      --bg-page: #ffffff;
-      --text-page: #1E293B;
-      --bg-card: #ffffff;
-      --border-card: #e5e7eb;
-      --bg-nav: rgba(255,255,255,0.85);
-    }
-    html.dark {
-      --bg-page: #0F172A;
-      --text-page: #F1F5F9;
-      --bg-card: #1E293B;
-      --border-card: #334155;
-      --bg-nav: rgba(15,23,42,0.85);
-    }
-    body { background: var(--bg-page); color: var(--text-page); transition: background 0.3s, color 0.3s; }
-    .card { background: var(--bg-card); border-color: var(--border-card); transition: background 0.3s, border-color 0.3s; }
-    nav { background: var(--bg-nav); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-color: var(--border-card); transition: background 0.3s; }
-    footer { background: var(--bg-card); border-color: var(--border-card); transition: background 0.3s, border-color 0.3s; }
-  </style>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%230052FF' rx='20' width='100' height='100'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='60' fill='white'>H</text></svg>">
 </head>
-<body class="min-h-screen flex flex-col">
-
-  <nav class="fixed top-0 left-0 right-0 z-50 border-b">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16">
-        <div class="flex items-center gap-2">
-          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="white"><path d="M8 1l6 3.5v7L8 15l-6-3.5v-7L8 1z"/></svg>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0052FF] to-[#4D7CFF] flex items-center justify-center shadow-accent">
+            <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
           </div>
-          <span class="font-bold text-lg" style="color: var(--text-page)">恒派智能科技</span>
+          <span class="font-display text-xl">恒派水务</span>
+        </a>
+        <div class="hidden md:flex items-center gap-1">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="products.html" class="nav-link">产品中心</a>
+          <a href="about.html" class="nav-link">关于我们</a>
+          <a href="news.html" class="nav-link active">新闻动态</a>
+          <a href="contact.html" class="nav-link">联系我们</a>
         </div>
-        <div class="hidden md:flex items-center gap-8">
-          <a href="index.html" class="text-sm font-medium hover:text-blue-600 transition-colors" style="color: var(--text-page); opacity:0.7">首页</a>
-          <a href="products.html" class="text-sm font-medium hover:text-blue-600 transition-colors" style="color: var(--text-page); opacity:0.7">产品中心</a>
-          <a href="about.html" class="text-sm font-medium hover:text-blue-600 transition-colors" style="color: var(--text-page); opacity:0.7">关于我们</a>
-          <a href="news.html" class="text-sm font-medium hover:text-blue-600 transition-colors" style="color:#2563EB">新闻动态</a>
-          <a href="contact.html" class="text-sm font-medium hover:text-blue-600 transition-colors" style="color: var(--text-page); opacity:0.7">在线咨询</a>
+        <div class="flex items-center gap-3">
+          <button id="theme-toggle" class="w-11 h-11 rounded-xl flex items-center justify-center hover:bg-muted transition-colors" aria-label="切换主题">
+            <svg id="icon-sun" class="w-5 h-5 hidden dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+            <svg id="icon-moon" class="w-5 h-5 block dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </button>
+          <button id="mobile-menu-btn" class="md:hidden w-11 h-11 rounded-xl flex items-center justify-center hover:bg-muted transition-colors">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+          </button>
         </div>
-        <button id="themeToggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-          <svg id="sunIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-          <svg id="moonIcon" class="hidden" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden border-t border-default bg-background/95 backdrop-blur-xl">
+      <div class="container py-4 space-y-1">
+        <a href="index.html" class="block px-4 py-3 rounded-lg text-sm font-medium hover:bg-muted">首页</a>
+        <a href="products.html" class="block px-4 py-3 rounded-lg text-sm font-medium hover:bg-muted">产品中心</a>
+        <a href="about.html" class="block px-4 py-3 rounded-lg text-sm font-medium hover:bg-muted">关于我们</a>
+        <a href="news.html" class="block px-4 py-3 rounded-lg text-sm font-medium bg-muted">新闻动态</a>
+        <a href="contact.html" class="block px-4 py-3 rounded-lg text-sm font-medium hover:bg-muted">联系我们</a>
       </div>
     </div>
   </nav>
 
-  <section class="pt-24 pb-16 px-4" style="background:linear-gradient(135deg,#eff6ff,#dbeafe)">
-    <div class="max-w-4xl mx-auto text-center">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4" style="color:#1E293B">新闻动态</h1>
-      <p class="text-lg" style="color:#475569">了解恒派智能科技最新资讯与行业动态</p>
+  <!-- Page Hero -->
+  <section class="pt-28 pb-16 relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-0 right-0 w-[500px] h-[400px] bg-gradient-to-br from-[#0052FF]/10 to-[#4D7CFF]/5 rounded-full blur-[100px]"></div>
     </div>
-  </section>
-
-  <section class="py-16 px-4">
-    <div class="max-w-4xl mx-auto">
-      <div class="space-y-6">
-        <!-- News 1 -->
-        <article class="card rounded-2xl border p-8">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full" style="color:#2563EB;background:#eff6ff;border:1px solid #bfdbfe">公司动态</span>
-            <span class="text-sm" style="color:var(--text-page);opacity:0.4">2025-12-15</span>
-          </div>
-          <h2 class="text-xl font-bold mb-3" style="color:var(--text-page)">山东恒派智能科技新版官网正式上线</h2>
-          <p class="leading-relaxed mb-4" style="color:var(--text-page);opacity:0.7">为更好地展示公司形象与产品服务，山东恒派智能科技官方网站经过全面升级改版，于今日正式上线。新版官网采用全新设计风格，突出展示公司六大核心产品与最新工程项目动态，同时支持暗色模式，为用户带来更好的浏览体验。网站还设置了在线咨询入口，方便客户快速获取技术方案支持。</p>
-          <p class="leading-relaxed" style="color:var(--text-page);opacity:0.7">公司表示，新版官网的上线是品牌升级的重要举措之一，未来将继续完善网站功能，为客户提供更便捷的在线服务。</p>
-        </article>
-
-        <!-- News 2 -->
-        <article class="card rounded-2xl border p-8">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full" style="color:#7C3AED;background:#f5f3ff;border:1px solid #ddd6fe">技术认证</span>
-            <span class="text-sm" style="color:var(--text-page);opacity:0.4">2025-11-20</span>
-          </div>
-          <h2 class="text-xl font-bold mb-3" style="color:var(--text-page)">恒派磁絮凝设备通过省级新技术鉴定</h2>
-          <p class="leading-relaxed mb-4" style="color:var(--text-page);opacity:0.7">经山东省科学技术厅组织专家鉴定，山东恒派智能科技有限公司研发的"高效磁絮凝分离水处理设备"核心技术达到国内领先水平。该设备采用新型磁种配方和优化絮凝工艺，分离效率和磁种回收率均显著提升，在矿山废水处理领域表现出色。鉴定委员会一致认为，该技术具有良好的推广应用价值。</p>
-          <p class="leading-relaxed" style="color:var(--text-page);opacity:0.7">此次通过省级新技术鉴定，标志着恒派智能科技在磁分离水处理领域的技术实力获得权威认可，为公司进一步拓展市场奠定了坚实基础。</p>
-        </article>
-
-        <!-- News 3 -->
-        <article class="card rounded-2xl border p-8">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full" style="color:#059669;background:#ecfdf5;border:1px solid #a7f3d0">战略合作</span>
-            <span class="text-sm" style="color:var(--text-page);opacity:0.4">2025-10-08</span>
-          </div>
-          <h2 class="text-xl font-bold mb-3" style="color:var(--text-page)">恒派与多家矿业集团达成战略合作</h2>
-          <p class="leading-relaxed mb-4" style="color:var(--text-page);opacity:0.7">近日，山东恒派智能科技有限公司先后与多家大型矿业集团签署战略合作协议，共同推进矿井水零排放处理项目建设。根据协议，恒派智能科技将为各合作矿业集团提供从方案设计、设备供应到安装调试的全流程服务，助力客户实现矿井水资源化利用和零排放目标。</p>
-          <p class="leading-relaxed" style="color:var(--text-page);opacity:0.7">目前，部分合作项目已进入设备安装阶段，预计明年上半年可建成投运。零排放处理后的矿井水将优先回用于生产用水和井下防尘，剩余部分达标外排。</p>
-        </article>
-
-        <!-- News 4 -->
-        <article class="card rounded-2xl border p-8">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full" style="color:#0891B2;background:#ecfeff;border:1px solid #a5f3fc">项目中标</span>
-            <span class="text-sm" style="color:var(--text-page);opacity:0.4">2025-09-15</span>
-          </div>
-          <h2 class="text-xl font-bold mb-3" style="color:var(--text-page)">恒派中标某省最大规模矿井水处理项目</h2>
-          <p class="leading-relaxed mb-4" style="color:var(--text-page);opacity:0.7">在近日结束的某省重点煤矿企业矿井水处理设备招标中，山东恒派智能科技有限公司凭借技术优势和丰富的工程经验，成功中标该省近年来最大规模的矿井水处理项目。项目总投资超过5000万元，采用恒派自主研发的"磁絮凝+膜工艺"组合技术路线，设计日处理能力达10000立方米。</p>
-          <p class="leading-relaxed" style="color:var(--text-page);opacity:0.7">该项目的中标，是恒派智能科技在矿山水处理领域的重大突破，将进一步巩固公司在北方矿业市场的领先地位。</p>
-        </article>
+    <div class="container relative">
+      <div class="max-w-2xl">
+        <div class="section-label mb-6"><span class="dot"></span><span>新闻动态</span></div>
+        <h1 class="text-4xl md:text-5xl font-display mb-4">最新<span class="gradient-text">资讯</span></h1>
+        <p class="text-lg text-muted-foreground">了解恒派智能科技最新动态、行业资讯和技术进展</p>
       </div>
     </div>
   </section>
 
-  <footer class="mt-auto py-10 px-4">
-    <div class="max-w-7xl mx-auto">
-      <div class="border-t pt-6 text-center text-sm" style="color:var(--text-page);opacity:0.4">
-        <p>© 2025 山东恒派智能科技有限公司 版权所有</p>
+  <!-- News List -->
+  <section class="py-20 lg:pb-32">
+    <div class="container">
+      <div class="space-y-8">
+        <!-- News Item 1 -->
+        <a href="news-detail-1.html" class="block card group hover:shadow-xl transition-all duration-300">
+          <div class="flex flex-col md:flex-row gap-6">
+            <div class="md:w-64 h-48 md:h-auto rounded-2xl bg-gradient-to-br from-[#0052FF]/10 to-[#4D7CFF]/5 flex items-center justify-center flex-shrink-0">
+              <svg class="w-16 h-16 text-[#0052FF]/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <div class="text-sm text-muted-foreground mb-2">2026年4月8日</div>
+              <h3 class="font-display text-xl mb-2 group-hover:text-[#0052FF] transition-colors">恒派智能科技成功交付宝钢集团磁分离设备项目</h3>
+              <p class="text-muted-foreground line-clamp-2">近日，我司为宝钢集团量身定制的磁分离水处理设备顺利投产，运行效果达到设计要求，获得客户高度认可。该设备采用我司自主研发的第四代磁分离技术...</p>
+              <div class="mt-4 flex items-center gap-2 text-[#0052FF] text-sm font-medium">
+                阅读全文
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- News Item 2 -->
+        <a href="news-detail-2.html" class="block card group hover:shadow-xl transition-all duration-300">
+          <div class="flex flex-col md:flex-row gap-6">
+            <div class="md:w-64 h-48 md:h-auto rounded-2xl bg-gradient-to-br from-[#0052FF]/10 to-[#4D7CFF]/5 flex items-center justify-center flex-shrink-0">
+              <svg class="w-16 h-16 text-[#0052FF]/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <div class="text-sm text-muted-foreground mb-2">2026年4月5日</div>
+              <h3 class="font-display text-xl mb-2 group-hover:text-[#0052FF] transition-colors">公司受邀参加第22届国际水处理展览会</h3>
+              <p class="text-muted-foreground line-clamp-2">4月15日至17日，我司将参展在上海新国际博览中心举办的第22届中国国际水处理展览会。届时将展示最新研发的第五代磁分离设备...</p>
+              <div class="mt-4 flex items-center gap-2 text-[#0052FF] text-sm font-medium">
+                阅读全文
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- News Item 3 -->
+        <a href="news-detail-3.html" class="block card group hover:shadow-xl transition-all duration-300">
+          <div class="flex flex-col md:flex-row gap-6">
+            <div class="md:w-64 h-48 md:h-auto rounded-2xl bg-gradient-to-br from-[#0052FF]/10 to-[#4D7CFF]/5 flex items-center justify-center flex-shrink-0">
+              <svg class="w-16 h-16 text-[#0052FF]/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <div class="text-sm text-muted-foreground mb-2">2026年3月28日</div>
+              <h3 class="font-display text-xl mb-2 group-hover:text-[#0052FF] transition-colors">恒派UV消毒设备通过欧盟CE认证</h3>
+              <p class="text-muted-foreground line-clamp-2">经过严格测试和审核，我司UV消毒设备系列全部通过欧盟CE认证，获得进入欧洲市场的通行证。这标志着我司产品质量达到国际先进水平...</p>
+              <div class="mt-4 flex items-center gap-2 text-[#0052FF] text-sm font-medium">
+                阅读全文
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- News Item 4 -->
+        <a href="news-detail-4.html" class="block card group hover:shadow-xl transition-all duration-300">
+          <div class="flex flex-col md:flex-row gap-6">
+            <div class="md:w-64 h-48 md:h-auto rounded-2xl bg-gradient-to-br from-[#0052FF]/10 to-[#4D7CFF]/5 flex items-center justify-center flex-shrink-0">
+              <svg class="w-16 h-16 text-[#0052FF]/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <div class="text-sm text-muted-foreground mb-2">2026年3月15日</div>
+              <h3 class="font-display text-xl mb-2 group-hover:text-[#0052FF] transition-colors">公司技术团队赴德国考察磁分离技术</h3>
+              <p class="text-muted-foreground line-clamp-2">3月上旬，我司技术总监率队赴德国考察学习世界领先的磁分离技术，与多家德国环保企业进行了深入技术交流，为我司下一代产品研发奠定基础...</p>
+              <div class="mt-4 flex items-center gap-2 text-[#0052FF] text-sm font-medium">
+                阅读全文
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- News Item 5 -->
+        <a href="news-detail-5.html" class="block card group hover:shadow-xl transition-all duration-300">
+          <div class="flex flex-col md:flex-row gap-6">
+            <div class="md:w-64 h-48 md:h-auto rounded-2xl bg-gradient-to-br from-[#0052FF]/10 to-[#4D7CFF]/5 flex items-center justify-center flex-shrink-0">
+              <svg class="w-16 h-16 text-[#0052FF]/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <div class="text-sm text-muted-foreground mb-2">2026年3月1日</div>
+              <h3 class="font-display text-xl mb-2 group-hover:text-[#0052FF] transition-colors">恒派磁分离技术入选《环保装备名录》</h3>
+              <p class="text-muted-foreground line-clamp-2">我司自主研发的磁分离水处理技术被工信部列入《国家鼓励发展的重大环保技术装备目录》，这是对我司技术创新能力的高度认可...</p>
+              <div class="mt-4 flex items-center gap-2 text-[#0052FF] text-sm font-medium">
+                阅读全文
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- News Item 6 -->
+        <a href="news-detail-6.html" class="block card group hover:shadow-xl transition-all duration-300">
+          <div class="flex flex-col md:flex-row gap-6">
+            <div class="md:w-64 h-48 md:h-auto rounded-2xl bg-gradient-to-br from-[#0052FF]/10 to-[#4D7CFF]/5 flex items-center justify-center flex-shrink-0">
+              <svg class="w-16 h-16 text-[#0052FF]/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <div class="text-sm text-muted-foreground mb-2">2026年2月20日</div>
+              <h3 class="font-display text-xl mb-2 group-hover:text-[#0052FF] transition-colors">我司中标某大型钢铁集团废水处理项目</h3>
+              <p class="text-muted-foreground line-clamp-2">经过激烈竞争，我司成功中标某大型钢铁集团废水处理站改造项目，中标金额达2800万元。该项目是我司成立以来单个合同金额最大的订单...</p>
+              <div class="mt-4 flex items-center gap-2 text-[#0052FF] text-sm font-medium">
+                阅读全文
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t border-default bg-muted/30">
+    <div class="container">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <a href="index.html" class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0052FF] to-[#4D7CFF] flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg>
+            </div>
+            <span class="font-display text-xl">恒派水务</span>
+          </a>
+          <p class="text-sm text-muted-foreground">专注磁分离技术水处理设备研发与制造</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">产品中心</h4>
+          <ul class="space-y-2 text-sm text-muted-foreground">
+            <li><a href="products.html" class="hover:text-[#0052FF]">全部产品</a></li>
+            <li><a href="product-magnetic-separator.html" class="hover:text-[#0052FF]">磁分离设备</a></li>
+            <li><a href="product-uv-disinfection.html" class="hover:text-[#0052FF]">UV消毒设备</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">关于我们</h4>
+          <ul class="space-y-2 text-sm text-muted-foreground">
+            <li><a href="about.html" class="hover:text-[#0052FF]">公司介绍</a></li>
+            <li><a href="news.html" class="hover:text-[#0052FF]">新闻动态</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">联系我们</h4>
+          <ul class="space-y-2 text-sm text-muted-foreground">
+            <li>电话：400-888-9999</li>
+            <li>邮箱：info@hengpai.cn</li>
+            <li>地址：山东省济南市高新区</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-8 border-t border-default text-center text-sm text-muted-foreground">
+        <p>&copy; 2026 山东恒派智能科技有限公司. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
   <script>
-    const toggle = document.getElementById('themeToggle');
+    const themeToggle = document.getElementById('theme-toggle');
     const html = document.documentElement;
-    const sunIcon = document.getElementById('sunIcon');
-    const moonIcon = document.getElementById('moonIcon');
     if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       html.classList.add('dark');
-      sunIcon.classList.add('hidden');
-      moonIcon.classList.remove('hidden');
-    } else {
-      html.classList.remove('dark');
-      sunIcon.classList.remove('hidden');
-      moonIcon.classList.add('hidden');
     }
-    toggle.addEventListener('click', () => {
+    themeToggle.addEventListener('click', () => {
       html.classList.toggle('dark');
-      const isDark = html.classList.contains('dark');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      if (isDark) { sunIcon.classList.add('hidden'); moonIcon.classList.remove('hidden'); }
-      else { sunIcon.classList.remove('hidden'); moonIcon.classList.add('hidden'); }
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
     });
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      navbar.classList.toggle('scrolled', window.scrollY > 10);
+    });
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
   </script>
 </body>
 </html>
