@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>产品中心 - 山东恒派智能科技有限公司</title>
+  <meta name="description" content="山东恒派智能科技核心产品：磁分离机、高精度过滤器、紫外消毒模块、反应池搅拌器、高速剪切机、磁混凝设备">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root{--bg:#0a0f1a;--bg-card:rgba(13,21,38,0.8);--text:#fff;--text-secondary:#94A5C7;--border:rgba(0,119,255,0.2);--primary:#0077FF;--secondary:#00C7BE;--accent:#5856D6}
+    [data-theme="light"]{--bg:#f0f4f8;--bg-card:rgba(255,255,255,0.75);--text:#0f172a;--text-secondary:#475569;--border:rgba(0,119,255,0.12)}
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    body{background:var(--bg);color:var(--text);font-family:'Noto Sans SC','Inter',sans-serif;overflow-x:hidden;transition:background .4s,color .4s}
+    a{text-decoration:none;color:inherit}
+    .text-gradient{background:linear-gradient(135deg,var(--primary),var(--secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .nav-wrap{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s,backdrop-filter .3s}
+    .nav-wrap.scrolled{backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background:var(--bg-card);border-bottom:1px solid var(--border)}
+    .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:72px}
+    .nav-logo{display:flex;align-items:center;gap:12px}
+    .nav-logo-icon{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--secondary));display:flex;align-items:center;justify-content:center}
+    .nav-logo-icon svg{width:22px;height:22px;color:#fff}
+    .nav-logo-text{font-size:18px;font-weight:700}
+    .nav-logo-sub{font-size:11px;color:var(--text-secondary);letter-spacing:1px}
+    .nav-links{display:flex;align-items:center;gap:32px}
+    .nav-links a{font-size:14px;color:var(--text-secondary);transition:color .2s}
+    .nav-links a:hover,.nav-links a.active{color:var(--primary)}
+    .nav-phone{display:flex;align-items:center;gap:6px;color:var(--primary);font-weight:600;font-size:14px}
+    .nav-phone svg{width:16px;height:16px}
+    .theme-btn{width:38px;height:38px;border-radius:10px;border:1px solid var(--border);cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--bg-card);color:var(--primary);transition:all .2s}
+    .theme-btn:hover{transform:scale(1.1)}
+    .theme-btn svg{width:18px;height:18px}
+    .mobile-menu-btn{display:none;background:none;border:none;color:var(--text);cursor:pointer}
+    .mobile-menu-btn svg{width:24px;height:24px}
+    .section{position:relative;padding:100px 24px}
+    .section-inner{max-width:1200px;margin:0 auto}
+    .section-header{text-align:center;margin-bottom:64px}
+    .section-label{font-size:12px;color:var(--primary);font-weight:600;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px}
+    .section-title{font-size:clamp(28px,3vw,36px);font-weight:700;margin-bottom:16px}
+    .section-line{width:64px;height:3px;background:linear-gradient(90deg,var(--primary),var(--secondary));margin:0 auto;border-radius:2px}
+    .page-hero{padding:140px 24px 60px;text-align:center}
+    .page-hero h1{font-size:clamp(32px,4vw,48px);font-weight:700;margin-bottom:16px}
+    .page-hero p{font-size:16px;color:var(--text-secondary);max-width:600px;margin:0 auto}
+    .footer{padding:40px 24px;border-top:1px solid var(--border)}
+    .footer-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px}
+    .footer-links{display:flex;gap:24px}
+    .footer-links a{font-size:13px;color:var(--text-secondary);transition:color .2s}
+    .footer-links a:hover{color:var(--primary)}
+    .footer-copy{font-size:13px;color:var(--text-secondary)}
+    .mobile-menu{position:fixed;top:0;right:0;bottom:0;width:280px;background:var(--bg);border-left:1px solid var(--border);z-index:100;transform:translateX(100%);transition:transform .3s;padding:80px 32px 32px}
+    .mobile-menu.open{transform:translateX(0)}
+    .mobile-menu a{display:block;font-size:18px;padding:12px 0;color:var(--text-secondary)}
+    .mobile-close{position:absolute;top:24px;right:24px;background:none;border:none;color:var(--text);cursor:pointer}
+    .mobile-close svg{width:24px;height:24px}
+    .overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:99;display:none}
+    .overlay.show{display:block}
+    /* Products Page Specific */
+    .product-detail{margin-bottom:80px;scroll-margin-top:100px}
+    .product-detail-inner{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:40px;transition:all .3s}
+    .product-detail-inner:hover{border-color:rgba(0,119,255,0.4);box-shadow:0 0 40px rgba(0,119,255,0.08)}
+    .product-detail:nth-child(even) .product-detail-inner{direction:rtl}
+    .product-detail:nth-child(even) .product-detail-inner>*{direction:ltr}
+    .product-img{border-radius:14px;overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,rgba(0,119,255,0.08),rgba(0,199,190,0.05))}
+    .product-img img{width:100%;height:100%;object-fit:cover;display:block}
+    .product-info h2{font-size:28px;font-weight:700;margin-bottom:16px}
+    .product-info p{font-size:15px;color:var(--text-secondary);line-height:1.8;margin-bottom:16px}
+    .product-specs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
+    .spec-item{padding:12px 16px;border-radius:10px;background:rgba(0,119,255,0.06);border:1px solid var(--border);font-size:13px}
+    .spec-item strong{display:block;font-size:14px;margin-bottom:2px}
+    .spec-item span{color:var(--text-secondary)}
+    @media(max-width:768px){
+      .nav-links{display:none}.mobile-menu-btn{display:block}
+      .product-detail-inner{grid-template-columns:1fr;padding:24px}
+      .product-detail:nth-child(even) .product-detail-inner{direction:ltr}
+      .footer-inner{flex-direction:column;text-align:center}
+    }
+    /* Carousel Styles */
+    .carousel-container { position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 14px; }
+    .carousel-track { display: flex; transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); height: 100%; }
+    .carousel-item { min-width: 100%; height: 100%; }
+    .carousel-item img { width: 100%; height: 100%; object-fit: cover; }
+    .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; border-radius: 20px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.2); color: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(8px); transition: all 0.3s; z-index: 10; opacity: 0; }
+    .carousel-container:hover .carousel-btn { opacity: 1; }
+    .carousel-btn:hover { background: var(--primary); border-color: var(--primary); }
+    .carousel-prev { left: 16px; }
+    .carousel-next { right: 16px; }
+    .carousel-dots { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 10; }
+    .carousel-dot { width: 8px; height: 8px; border-radius: 4px; background: rgba(255,255,255,0.3); cursor: pointer; transition: all 0.3s; }
+    .carousel-dot.active { width: 24px; background: var(--primary); }
+  </style>
+</head>
+<body>
+  <nav class="nav-wrap" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon"><i data-lucide="magnet"></i></div>
+        <div><div class="nav-logo-text">恒派智能科技</div><div class="nav-logo-sub">HENGPAI INTELLIGENT</div></div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">首页</a>
+        <a href="products.html" class="active">产品中心</a>
+        <a href="about.html">关于我们</a>
+        <a href="contact.html">联系我们</a>
+        <a href="tel:17653901110" class="nav-phone"><i data-lucide="phone"></i> 17653901110</a>
+        <button class="theme-btn" id="theme-toggle" title="切换主题"><i data-lucide="sun" id="icon-sun" style="display:none"></i><i data-lucide="moon" id="icon-moon"></i></button>
+      </div>
+      <button class="mobile-menu-btn" id="menu-open"><i data-lucide="menu"></i></button>
+    </div>
+  </nav>
+  <div class="overlay" id="overlay"></div>
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-close" id="menu-close"><i data-lucide="x"></i></button>
+    <a href="index.html">首页</a><a href="products.html">产品中心</a><a href="about.html">关于我们</a><a href="contact.html">联系我们</a>
+    <a href="tel:17653901110" style="color:var(--primary)">📞 17653901110</a>
+  </div>
+
+  <div class="page-hero">
+    <div class="section-label">Products</div>
+    <h1>核心产品</h1>
+    <p>专注水处理领域十余年，为您提供高效、可靠的环保设备解决方案</p>
+  </div>
+
+  <section class="section" style="padding-top:40px">
+    <div class="section-inner">
+
+      <div class="product-detail" id="magnetic-separator">
+        <div class="product-detail-inner">
+          <div class="product-img">
+            <div class="carousel-container" data-carousel="mag">
+              <div class="carousel-track">
+                <div class="carousel-item"><img src="images/magnetic_separator_1.jpg" alt="磁分离机1"></div>
+                <div class="carousel-item"><img src="images/magnetic_separator_2.jpg" alt="磁分离机2"></div>
+              </div>
+              <button class="carousel-btn carousel-prev"><i data-lucide="chevron-left"></i></button>
+              <button class="carousel-btn carousel-next"><i data-lucide="chevron-right"></i></button>
+              <div class="carousel-dots"></div>
+            </div>
+          </div>
+          <div class="product-info">
+            <h2 style="color:var(--primary)">磁分离机</h2>
+            <p>高效分离水体中的磁性污染物，核心采用高强度永磁体，磁场强度可达1.5T以上。设备自动化程度高，可实现连续运行，广泛应用于市政污水、工业废水处理等场景。</p>
+            <div class="product-specs">
+              <div class="spec-item"><strong>处理能力</strong><span>1-100 T/h</span></div>
+              <div class="spec-item"><strong>磁粉回收率</strong><span>>99%</span></div>
+              <div class="spec-item"><strong>适用场景</strong><span>市政/工业废水</span></div>
+              <div class="spec-item"><strong>自动化</strong><span>PLC全自动控制</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-detail" id="high-precision-filter">
+        <div class="product-detail-inner">
+          <div class="product-img">
+            <div class="carousel-container" data-carousel="drum">
+              <div class="carousel-track">
+                <div class="carousel-item"><img src="images/drum_filter_1.jpg" alt="转鼓式精密过滤器1"></div>
+                <div class="carousel-item"><img src="images/drum_filter_2.jpg" alt="转鼓式精密过滤器2"></div>
+              </div>
+              <button class="carousel-btn carousel-prev"><i data-lucide="chevron-left"></i></button>
+              <button class="carousel-btn carousel-next"><i data-lucide="chevron-right"></i></button>
+              <div class="carousel-dots"></div>
+            </div>
+          </div>
+          <div class="product-info">
+            <h2 style="color:var(--secondary)">转鼓式精密过滤器</h2>
+            <p>过滤精度达微米级（8~50μm），有效去除水体中的悬浮物和细小颗粒，产水水质稳定达标。采用不锈钢滤芯，耐腐蚀、使用寿命长，自动反冲洗功能减少维护成本。</p>
+            <div class="product-specs">
+              <div class="spec-item"><strong>过滤精度</strong><span>8~50 μm</span></div>
+              <div class="spec-item"><strong>材质</strong><span>304/316L不锈钢</span></div>
+              <div class="spec-item"><strong>反冲洗</strong><span>自动反冲洗</span></div>
+              <div class="spec-item"><strong>压力等级</strong><span>0.6~1.6 MPa</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-detail" id="uv-disinfection">
+        <div class="product-detail-inner">
+          <div class="product-img">
+            <div class="carousel-container" data-carousel="uv">
+              <div class="carousel-track">
+                <div class="carousel-item"><img src="images/uv_disinfector_1.jpg" alt="明渠式紫外线消毒器1"></div>
+                <div class="carousel-item"><img src="images/uv_disinfector_2.jpg" alt="明渠式紫外线消毒器2"></div>
+              </div>
+              <button class="carousel-btn carousel-prev"><i data-lucide="chevron-left"></i></button>
+              <button class="carousel-btn carousel-next"><i data-lucide="chevron-right"></i></button>
+              <div class="carousel-dots"></div>
+            </div>
+          </div>
+          <div class="product-info">
+            <h2 style="color:var(--accent)">明渠式紫外线消毒器</h2>
+            <p>采用254nm紫外线杀菌技术，灭菌率达99.99%，无需添加化学药剂，绿色环保。模块化设计便于安装维护，适用于各类水处理消毒环节。</p>
+            <div class="product-specs">
+              <div class="spec-item"><strong>波长</strong><span>254 nm</span></div>
+              <div class="spec-item"><strong>灭菌率</strong><span>>99.99%</span></div>
+              <div class="spec-item"><strong>设计</strong><span>模块化即插即用</span></div>
+              <div class="spec-item"><strong>环保</strong><span>无化学残留</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-detail" id="reactor-agitator">
+        <div class="product-detail-inner">
+          <div class="product-img"><img src="images/reactor_agitator.jpg" alt="反应池搅拌器"></div>
+          <div class="product-info">
+            <h2 style="color:#60a5fa">反应池搅拌器</h2>
+            <p>304不锈钢材质打造，配备变频调速控制系统，IP68防护等级。搅拌叶轮经过CFD优化设计，确保池内无搅拌死角，药剂混合均匀，运行平稳可靠。</p>
+            <div class="product-specs">
+              <div class="spec-item"><strong>材质</strong><span>304不锈钢</span></div>
+              <div class="spec-item"><strong>防护等级</strong><span>IP68</span></div>
+              <div class="spec-item"><strong>控制方式</strong><span>变频调速</span></div>
+              <div class="spec-item"><strong>设计</strong><span>CFD优化叶轮</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-detail" id="high-shear-machine">
+        <div class="product-detail-inner">
+          <div class="product-img"><img src="images/high_shear_machine.jpg" alt="非金属高速剪切机"></div>
+          <div class="product-info">
+            <h2 style="color:#f97316">非金属高速剪切机</h2>
+            <p>高速旋转剪切打散矾花和磁性絮体，显著提高后续沉淀分离效果。变频调速设计，可根据水质工况灵活调节转速，运行平稳、噪音低。</p>
+            <div class="product-specs">
+              <div class="spec-item"><strong>功能</strong><span>高速剪切打散</span></div>
+              <div class="spec-item"><strong>调速</strong><span>变频无级调速</span></div>
+              <div class="spec-item"><strong>噪音</strong><span><65 dB</span></div>
+              <div class="spec-item"><strong>维护</strong><span>免润滑设计</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-detail" id="magnetic-flocculation">
+        <div class="product-detail-inner">
+          <div class="product-img"><img src="images/magnetic_flocculation_v2.jpg" alt="磁混凝设备"></div>
+          <div class="product-info">
+            <h2 style="color:#a855f7">磁混凝设备</h2>
+            <p>将磁分离技术与絮凝反应完美结合的一体化设备。通过投加磁粉与絮凝剂，使污染物形成磁性絮体后快速分离，处理效率高、占地面积小。</p>
+            <div class="product-specs">
+              <div class="spec-item"><strong>工艺</strong><span>磁分离+絮凝</span></div>
+              <div class="spec-item"><strong>特点</strong><span>一体化设计</span></div>
+              <div class="spec-item"><strong>占地</strong><span>比传统减少60%</span></div>
+              <div class="spec-item"><strong>效率</strong><span>停留时间<20min</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="nav-logo-icon"><i data-lucide="magnet"></i></div>
+        <div><div style="font-weight:700">山东恒派智能科技有限公司</div><div style="font-size:12px;color:var(--text-secondary)">专注水处理设备 · 磁分离技术专家</div></div>
+      </div>
+      <div class="footer-links"><a href="index.html">首页</a><a href="products.html">产品中心</a><a href="about.html">关于我们</a><a href="contact.html">联系我们</a></div>
+      <div class="footer-copy">&copy; 2024 山东恒派智能科技 版权所有</div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    var toggle=document.getElementById('theme-toggle'),iconSun=document.getElementById('icon-sun'),iconMoon=document.getElementById('icon-moon');
+    function setTheme(t){document.documentElement.setAttribute('data-theme',t);localStorage.setItem('theme',t);iconSun.style.display=t==='dark'?'block':'none';iconMoon.style.display=t==='dark'?'none':'block'}
+    toggle.addEventListener('click',function(){setTheme(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark')});
+    setTheme(localStorage.getItem('theme')||'dark');
+    var navbar=document.getElementById('navbar');window.addEventListener('scroll',function(){navbar.classList.toggle('scrolled',scrollY>50)});
+    var menuOpen=document.getElementById('menu-open'),menuClose=document.getElementById('menu-close'),mm=document.getElementById('mobile-menu'),ov=document.getElementById('overlay');
+    function openM(){mm.classList.add('open');ov.classList.add('show')}function closeM(){mm.classList.remove('open');ov.classList.remove('show')}
+    menuOpen.addEventListener('click',openM);menuClose.addEventListener('click',closeM);ov.addEventListener('click',closeM);
+    mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeM)});
+
+    // --- Carousel Logic ---
+    document.querySelectorAll('.carousel-container').forEach(container => {
+      const track = container.querySelector('.carousel-track');
+      const items = container.querySelectorAll('.carousel-item');
+      const dotsContainer = container.querySelector('.carousel-dots');
+      const prevBtn = container.querySelector('.carousel-prev');
+      const nextBtn = container.querySelector('.carousel-next');
+      let index = 0;
+
+      // Create dots
+      items.forEach((_, i) => {
+        const dot = document.createElement('div');
+        dot.classList.add('carousel-dot');
+        if (i === 0) dot.classList.add('active');
+        dot.onclick = () => goTo(i);
+        dotsContainer.appendChild(dot);
+      });
+
+      const dots = dotsContainer.querySelectorAll('.carousel-dot');
+
+      function update() {
+        track.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+      }
+
+      function goTo(i) {
+        index = (i + items.length) % items.length;
+        update();
+      }
+
+      prevBtn.onclick = (e) => { e.stopPropagation(); goTo(index - 1); };
+      nextBtn.onclick = (e) => { e.stopPropagation(); goTo(index + 1); };
+      
+      // Auto play
+      let timer = setInterval(() => goTo(index + 1), 5000);
+      container.onmouseenter = () => clearInterval(timer);
+      container.onmouseleave = () => timer = setInterval(() => goTo(index + 1), 5000);
+    });
+  </script>
+</body>
+</html>
